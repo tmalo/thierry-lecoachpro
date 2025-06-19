@@ -72,7 +72,7 @@ export default function OffresPage() {
               <h3 className="font-montserrat text-xl font-semibold mb-4 text-primary">Premier entretien gratuit</h3>
               <p className="text-gray-700 leading-relaxed">
                 Nous commençons toujours par un entretien de 30 minutes, sans engagement, pour faire connaissance et
-                explorer ensemble si mon approche résonne avec vos besoins. C&apos;est l'occasion de poser toutes vos
+                explorer ensemble si mon approche résonne avec vos besoins. C&apos;est l&apos;occasion de poser toutes vos
                 questions et de sentir si nous pouvons créer cet espace de confiance nécessaire à votre transformation.
               </p>
             </div>
@@ -85,8 +85,8 @@ export default function OffresPage() {
         <div className="container-max section-padding">
           <div className="max-w-4xl mx-auto text-center">
             <blockquote className="text-2xl md:text-3xl text-primary font-light leading-relaxed italic">
-              "Chaque accompagnement est une invitation à sortir de la réaction pour retrouver votre pouvoir d&apos;agir en
-              conscience."
+              &ldquo;Chaque accompagnement est une invitation à sortir de la réaction pour retrouver votre pouvoir d&apos;agir en
+              conscience.&rdquo;
             </blockquote>
           </div>
         </div>
