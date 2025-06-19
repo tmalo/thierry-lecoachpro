@@ -100,8 +100,8 @@ export default function AProposPage() {
               {/* Texte */}
               <div className="prose prose-lg max-w-none">
                 <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                  L&apos;action que je propose se veut à la fois <strong>stratégique</strong> —
-                  alignée avec votre direction — et <strong>fluide</strong> — intégrée à votre
+                  L&apos;<strong>action</strong> que je propose se veut à la fois <strong>stratégique</strong> —
+                  alignée avec votre direction — <strong>et fluide</strong> — intégrée à votre
                   quotidien.
                 </p>
 

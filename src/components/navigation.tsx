@@ -13,7 +13,7 @@ export default function Navigation() {
       <div className="container-max section-padding">
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="font-montserrat font-semibold text-xl text-primary">
-            Coaching Professionnel
+            Thierry | Coach Professionnel
           </Link>
 
           {/* Desktop Navigation */}
