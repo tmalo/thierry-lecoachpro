@@ -9,10 +9,10 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 gap-8">
           <div>
             <h3 className="font-montserrat font-semibold text-xl mb-4">
-              Coaching Professionnel
+              Thierry | Coach Professionnel
             </h3>
             <p className="text-blue-100 leading-relaxed">
-              {"L'équipe inspire, le leader respire"}
+              {"L'équipe inspire, le leader respire."}
             </p>
           </div>
 

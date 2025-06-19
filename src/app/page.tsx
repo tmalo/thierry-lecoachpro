@@ -13,7 +13,7 @@ export default function HomePage() {
         <div className="container-max section-padding">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="font-montserrat text-4xl md:text-6xl font-bold text-primary mb-8 animate-fade-in">
-              {"L'équipe inspire,"}
+              L&apos;équipe inspire,
               <br />
               <span className="text-gray-700">le leader respire</span>
             </h1>
@@ -21,14 +21,14 @@ export default function HomePage() {
             <div className="max-w-3xl mx-auto mb-12">
               <p className="text-xl md:text-2xl text-gray-700 leading-relaxed mb-6">
                 <strong>
-                  Rien n'est plus motivant dans l'adversité qu'une équipe
+                  Rien n&apos;est plus motivant dans l&apos;adversité qu&apos;une équipe
                   engagée, créative et performante.
                 </strong>
               </p>
               <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
-                J'aide les managers à construire et à maintenir ce type
-                d'équipe, grâce à un coaching sur mesure, qui redonne du souffle
-                au leadership et du sens à l'action collective.
+                J&apos;aide les managers à construire et à maintenir ce type
+                d&apos;équipe, grâce à un coaching sur mesure, qui redonne du souffle
+                au leadership et du sens à l&apos;action collective.
               </p>
             </div>
 
@@ -86,7 +86,7 @@ export default function HomePage() {
                 Approche composite
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                J'orchestre plusieurs instruments théoriques pour composer un
+                J&apos;orchestre plusieurs instruments théoriques pour composer un
                 cheminement interrogatif unique, adapté à vous.
               </p>
             </div>
@@ -99,7 +99,7 @@ export default function HomePage() {
                 Action mesurée
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                Des invitations à l'action stratégiques et fluides, qui vous
+                Des invitations à l&apos;action stratégiques et fluides, qui vous
                 rapprochent de vos objectifs sans bouleverser votre contexte.
               </p>
             </div>
@@ -118,22 +118,22 @@ export default function HomePage() {
               <div className="flex items-start gap-4 p-6 bg-white rounded-lg border-l-4 border-primary/20">
                 <ul className="space-y-1 text-gray-900 dark:text-gray-400 benefits">
                   <li>
-                    Si vous vous sentez "entre le marteau et l'enclume", pris·e
+                    Si vous vous sentez &ldquo;entre le marteau et l&apos;enclume&rdquo;, pris·e
                     entre la pression de votre direction et la démotivation de
                     vos collaborateurs.
                   </li>
                   <li>
-                    Si vous avez l'intuition qu'un autre leadership est possible
+                    Si vous avez l&apos;intuition qu&apos;un autre leadership est possible
                     — mais vous ne savez pas par où commencer.
                   </li>
                   <li>
-                    Si votre équipe s'épuise dans les détails ou s'égare dans de
+                    Si votre équipe s&apos;épuise dans les détails ou s&apos;égare dans de
                     fausses urgences, pendant que vous portez seul·e
-                    l'essentiel.
+                    l&apos;essentiel.
                   </li>
                   <li>
                     Si vous êtes fatigué·e de devoir montrer une façade assurée
-                    alors que tout en vous cherche de l'air.
+                    alors que tout en vous cherche de l&apos;air.
                   </li>
                 </ul>
               </div>
@@ -156,7 +156,7 @@ export default function HomePage() {
                   Clarté retrouvée
                 </h3>
                 <p className="text-gray-700 leading-relaxed">
-                  Un espace de réflexion à l'abri des pressions, où vous pouvez
+                  Un espace de réflexion à l&apos;abri des pressions, où vous pouvez
                   avancer au rythme qui vous convient vraiment. De la clarté,
                   même en pleine turbulence, pour choisir des actions en accord
                   avec vos convictions.
@@ -179,8 +179,8 @@ export default function HomePage() {
                   Actions alignées
                 </h3>
                 <p className="text-gray-700 leading-relaxed">
-                  Des invitations à l'action stratégiques et fluides, qui
-                  demandent peu d'effort mais vous rapprochent résolument de là
+                  Des invitations à l&apos;action stratégiques et fluides, qui
+                  demandent peu d&apos;effort mais vous rapprochent résolument de là
                   où vous voulez aller.
                 </p>
               </div>
@@ -205,8 +205,8 @@ export default function HomePage() {
         <div className="container-max section-padding">
           <div className="max-w-4xl mx-auto text-center">
             <blockquote className="text-2xl md:text-3xl text-primary font-light leading-relaxed italic">
-              "Pour que vos prochaines décisions ne soient plus prisonnières de
-              l'urgence, mais guidées par ce qui compte vraiment pour vous."
+              &ldquo;Pour que vos prochaines décisions ne soient plus prisonnières de
+              l&apos;urgence, mais guidées par ce qui compte vraiment pour vous.&rdquo;
             </blockquote>
           </div>
         </div>
@@ -219,8 +219,8 @@ export default function HomePage() {
             Prêt à être écouté comme on écoute un poète ?
           </h2>
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Commençons par une conversation. Sans engagement, juste l'espace
-            d'explorer ensemble ce qui pourrait émerger de cette écoute
+            Commençons par une conversation. Sans engagement, juste l&apos;espace
+            d&apos;explorer ensemble ce qui pourrait émerger de cette écoute
             authentique.
           </p>
           <Link
