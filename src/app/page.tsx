@@ -13,7 +13,7 @@ export default function HomePage() {
         <div className="container-max section-padding">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="font-montserrat text-4xl md:text-6xl font-bold text-primary mb-8 animate-fade-in">
-              {"L&apos;équipe inspire,"}
+              L&apos;équipe inspire,
               <br />
               <span className="text-gray-700">le leader respire</span>
             </h1>
