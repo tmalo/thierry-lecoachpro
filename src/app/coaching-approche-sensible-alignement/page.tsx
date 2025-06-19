@@ -34,13 +34,13 @@ export default function AProposPage() {
                 <p className="text-lg text-gray-700 leading-relaxed mb-6">
                   <strong>Je vous écoute comme on écoute un poème</strong> :
                   avec attention, respect et la conscience que tout ne peut pas
-                  être compris immédiatement. Mon approche s'appuie sur une
+                  être compris immédiatement. Mon approche s&apos;appuie sur une
                   écoute sensible, qui cherche à entendre les nuances autant que
                   ce qui est explicite.
                 </p>
 
                 <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                  <strong>J'orchestre plusieurs approches</strong> pour composer
+                  <strong>J&apos;orchestre plusieurs approches</strong> pour composer
                   un cheminement interrogatif unique. Je puise dans divers
                   courants (ACT, systémique, apprentissage, Élément Humain…)
                   pour adapter ma manière de vous accompagner.
@@ -48,7 +48,7 @@ export default function AProposPage() {
 
                 <p className="text-lg text-gray-700 leading-relaxed mb-6">
                   <strong>
-                    Chaque proposition d'action est pensée comme une note de
+                    Chaque proposition d&apos;action est pensée comme une note de
                     musique
                   </strong>{' '}
                   : libre à vous de voir si elle résonne, de la jouer ou de la
@@ -87,7 +87,7 @@ export default function AProposPage() {
                   <Image
                     src="/yousef-espanioly-DA_tplYgTow-unsplash.jpg"
                     className="rounded-lg shadow-lg object-cover w-full h-full"
-                    alt="un espace à l'abri des pressions"
+                    alt="un espace à l&apos;abri des pressions"
                     width={576}
                     height={383}
                   />
@@ -100,16 +100,16 @@ export default function AProposPage() {
               {/* Texte */}
               <div className="prose prose-lg max-w-none">
                 <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                  L'action que je propose se veut à la fois <strong>stratégique</strong> —
+                  L&apos;action que je propose se veut à la fois <strong>stratégique</strong> —
                   alignée avec votre direction — et <strong>fluide</strong> — intégrée à votre
                   quotidien.
                 </p>
 
                 <p className="text-lg text-gray-700 leading-relaxed">
                   Ce travail ensemble crée un{' '}
-                  <strong>espace à l'abri des pressions</strong>, où vous pouvez
+                  <strong>espace à l&apos;abri des pressions</strong>, où vous pouvez
                   retrouver clarté, cohérence et créativité. Pour que vos
-                  prochaines décisions ne soient plus prisonnières de l'urgence,
+                  prochaines décisions ne soient plus prisonnières de l&apos;urgence,
                   mais guidées par ce qui compte vraiment pour vous.
                 </p>
               </div>
@@ -180,11 +180,11 @@ export default function AProposPage() {
 
             <div className="bg-primary/5 p-8 rounded-lg border border-primary/10">
               <p className="prose text-lg text-gray-700 leading-relaxed text-left">
-                <strong>Un espace de réflexion à l'abri des pressions</strong>,
+                <strong>Un espace de réflexion à l&apos;abri des pressions</strong>,
                 où vous pouvez avancer au rythme qui vous convient vraiment.
                 Vous repartez avec <strong>de la clarté</strong>, même en pleine
                 turbulence, pour choisir des actions en accord avec vos
-                convictions plutôt que dictées par l'urgence. Vous repartez sans
+                convictions plutôt que dictées par l&apos;urgence. Vous repartez sans
                 doute aussi avec <strong>des idées neuves</strong>, nées de
                 cette créativité que seule la sérénité peut offrir, pour
                 continuer à écrire le poème de votre vie.
@@ -199,9 +199,9 @@ export default function AProposPage() {
         <div className="container-max section-padding">
           <div className="max-w-4xl mx-auto text-center">
             <blockquote className="text-2xl md:text-3xl font-light leading-relaxed italic mb-8">
-              "Chaque proposition d'action est pensée comme une note de musique
+              &ldquo; Chaque proposition d&apos;action est pensée comme une note de musique
               : libre à vous de voir si elle résonne, de la jouer ou de la
-              transformer."
+              transformer&rdquo;
             </blockquote>
             <Link
               href="/contact"

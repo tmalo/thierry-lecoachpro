@@ -16,7 +16,7 @@ export default function OffresPage() {
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="font-montserrat text-4xl md:text-5xl font-bold text-primary mb-6">Mes offres de coaching</h1>
             <p className="text-xl text-gray-600 leading-relaxed">
-              Trois chemins pour sortir de l'urgence permanente et retrouver un leadership qui vous ressemble. Chaque
+              Trois chemins pour sortir de l&apos;urgence permanente et retrouver un leadership qui vous ressemble. Chaque
               accompagnement est pensé pour vous redonner du souffle et de la clarté.
             </p>
           </div>
@@ -61,7 +61,7 @@ export default function OffresPage() {
                     Accompagnement 3-6 mois
                   </h3>
                   <p className="text-gray-600 leading-relaxed mb-4">
-                    Le temps nécessaire pour ancrer de nouveaux réflexes et voir les transformations s'installer
+                    Le temps nécessaire pour ancrer de nouveaux réflexes et voir les transformations s&apos;installer
                     durablement.
                   </p>
                 </div>
@@ -72,7 +72,7 @@ export default function OffresPage() {
               <h3 className="font-montserrat text-xl font-semibold mb-4 text-primary">Premier entretien gratuit</h3>
               <p className="text-gray-700 leading-relaxed">
                 Nous commençons toujours par un entretien de 30 minutes, sans engagement, pour faire connaissance et
-                explorer ensemble si mon approche résonne avec vos besoins. C'est l'occasion de poser toutes vos
+                explorer ensemble si mon approche résonne avec vos besoins. C&apos;est l'occasion de poser toutes vos
                 questions et de sentir si nous pouvons créer cet espace de confiance nécessaire à votre transformation.
               </p>
             </div>
@@ -85,7 +85,7 @@ export default function OffresPage() {
         <div className="container-max section-padding">
           <div className="max-w-4xl mx-auto text-center">
             <blockquote className="text-2xl md:text-3xl text-primary font-light leading-relaxed italic">
-              "Chaque accompagnement est une invitation à sortir de la réaction pour retrouver votre pouvoir d'agir en
+              "Chaque accompagnement est une invitation à sortir de la réaction pour retrouver votre pouvoir d&apos;agir en
               conscience."
             </blockquote>
           </div>
@@ -96,10 +96,10 @@ export default function OffresPage() {
       <section className="py-20 bg-primary text-white">
         <div className="container-max section-padding text-center">
           <h2 className="font-montserrat text-3xl md:text-4xl font-bold mb-6">
-            Prêt à sortir de l'urgence permanente ?
+            Prêt à sortir de l&apos;urgence permanente ?
           </h2>
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Commençons par identifier ensemble l'accompagnement qui vous permettra de retrouver votre souffle et votre
+            Commençons par identifier ensemble l&apos;accompagnement qui vous permettra de retrouver votre souffle et votre
             clarté de leader.
           </p>
           <Link
