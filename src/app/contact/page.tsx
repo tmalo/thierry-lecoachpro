@@ -26,7 +26,7 @@ export default function ContactPage() {
       const form = e.target as HTMLFormElement
       const formData = new FormData(form)
 
-      const response = await fetch('/', {
+      const response = await fetch('/__contact.html', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
