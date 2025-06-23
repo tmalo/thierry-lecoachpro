@@ -6,6 +6,7 @@ export interface Offre {
   title: string
   subtitle: string
   description: string
+  audience: string
   douleurs: string[]
   benefices: string[]
   modalites: string[]
@@ -20,6 +21,7 @@ export const offres: Offre[] = [
     subtitle: "Retrouver votre souffle de leader",
     description:
       "Un espace sur mesure pour sortir de la réaction permanente, gagner en clarté, et retrouver votre capacité à décider selon vos convictions. Ensemble, nous créons les conditions pour que vous repreniez la main sur votre leadership, même dans la turbulence.",
+    audience: "Managers",
     douleurs: [
       "Vous croulez sous la pression des livrables et les réunions sans fin",
       "Vous ressentez une fatigue décisionnelle constante",
@@ -46,6 +48,7 @@ export const offres: Offre[] = [
     subtitle: "Transformer la dynamique collective",
     description:
       "Quand les tensions minent la performance et que la démotivation s'installe, il est temps de recréer une dynamique d'engagement. Nous travaillons ensemble pour que votre équipe retrouve sa créativité et sa capacité d'action collective.",
+    audience: "Teams",
     douleurs: [
       "Turnover élevé et démotivation visible",
       "Passivité de l'équipe face aux défis",
@@ -72,6 +75,7 @@ export const offres: Offre[] = [
     subtitle: "Des outils pour respirer autrement",
     description:
       "Des moments d'apprentissage collectif pour développer des compétences clés : sortir de l'urgence permanente, communiquer avec impact, ou libérer la créativité de l'équipe. Chaque atelier offre des outils concrets pour transformer votre quotidien.",
+    audience: "Professionals",
     douleurs: [
       "Manque d'outils pour gérer la pression",
       "Communication inefficace en situation de stress",

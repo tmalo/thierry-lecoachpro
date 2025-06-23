@@ -7,6 +7,7 @@ export default function OffreCard({ offre }: { offre: Offre }) {
     <div
       className="bg-white rounded-2xl border border-gray-200 overflow-hidden"
       data-sku={offre.sku}
+      data-audience={offre.audience}
       id={`offre-${offre.sku}`}
     >
       <div className="p-8 md:p-12">
