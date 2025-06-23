@@ -59,10 +59,10 @@ export const offres: Offre[] = [
       "Une capacité d'adaptation aux changements",
     ],
     modalites: [
+      "Accompagnement sur 3 à 6 mois",
       "Ateliers sur ½ journée ou 1 journée",
       "Mise en lumière des interactions clés",
       "Expérimentation et régulation des fonctionnements d'équipe",
-      "Réflexivité sur les pratiques collaboratives",
     ],
   },
   {
