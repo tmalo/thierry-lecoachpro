@@ -1,4 +1,5 @@
 import { offres, type Offre } from './offres'
+import { livreData, apprentissages } from './livre-data'
 import { config } from './config'
 
 // Données de l'organisation
@@ -24,6 +25,25 @@ const organizationData = {
     description:
       "Durant plus de 20 ans, Thierry a piloté des projets d'innovation et managé des équipes. Il est aujourd'hui Executive Coach.",
   },
+}
+
+// Données de l'auteur
+const authorData = {
+  '@type': 'Person',
+  '@id': `${config.siteUrl}#author`,
+  name: livreData.author.name,
+  jobTitle: livreData.author.jobTitle,
+  description: livreData.author.description,
+  worksFor: {
+    '@id': `${config.siteUrl}#organization`,
+  },
+  knowsAbout: livreData.about,
+  expertise: [
+    'Executive Coaching',
+    'Team Management',
+    'Leadership Development',
+    'Innovation Management',
+  ],
 }
 
 // Convertir une offre en données structurées
@@ -63,6 +83,138 @@ function offreToStructuredData(offre: Offre) {
         urlTemplate: `${config.siteUrl}/contact?offre=${offre.sku}`,
       },
     },
+  }
+}
+
+// Générer le JSON-LD pour le livre
+export function generateLivreStructuredData() {
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      // Organisation
+      {
+        // '@type': 'Organization',
+        '@id': `${config.siteUrl}#organization`,
+        ...organizationData,
+      },
+      // Auteur
+      authorData,
+      // Livre
+      {
+        '@type': 'Book',
+        '@id': `${config.siteUrl}/livre#book`,
+        name: livreData.title,
+        alternateName: livreData.subtitle,
+        description: livreData.description,
+        author: {
+          '@id': `${config.siteUrl}#author`,
+        },
+        publisher: livreData.publisher
+          ? {
+              '@type': 'Organization',
+              name: livreData.publisher,
+            }
+          : undefined,
+        genre: livreData.genre,
+        audience: livreData.audience.map((aud) => ({
+          '@type': 'Audience',
+          audienceType: aud,
+        })),
+        about: livreData.about.map((subject) => ({
+          '@type': 'Thing',
+          name: subject,
+        })),
+        inLanguage: livreData.inLanguage,
+        ...(livreData.isbn && { isbn: livreData.isbn }),
+        ...(livreData.datePublished && {
+          datePublished: livreData.datePublished,
+        }),
+        ...(livreData.numberOfPages && {
+          numberOfPages: livreData.numberOfPages,
+        }),
+        bookFormat: livreData.bookFormat,
+        url: livreData.url,
+        ...(livreData.image && { image: livreData.image }),
+        teaches: apprentissages.map((apprentissage) => ({
+          '@type': 'Thing',
+          name: apprentissage,
+        })),
+        educationalUse: 'Professional Development',
+        learningResourceType: 'Book',
+        potentialAction: [
+          {
+            '@type': 'ReadAction',
+            target: {
+              '@type': 'EntryPoint',
+              urlTemplate: livreData.url,
+            },
+          },
+          {
+            '@type': 'BuyAction',
+            target: {
+              '@type': 'EntryPoint',
+              urlTemplate: `${config.siteUrl}/contact?sujet=livre`,
+            },
+          },
+        ],
+      },
+      // Page du livre
+      {
+        '@type': 'WebPage',
+        '@id': livreData.url,
+        url: livreData.url,
+        name: `${livreData.title} - ${livreData.subtitle}`,
+        description: livreData.description,
+        isPartOf: {
+          '@type': 'WebSite',
+          '@id': `${config.siteUrl}#website`,
+          url: config.siteUrl,
+          name: 'Coaching Professionnel',
+        },
+        about: {
+          '@id': `${config.siteUrl}/livre#book`,
+        },
+        author: {
+          '@id': `${config.siteUrl}#author`,
+        },
+        mainEntity: {
+          '@id': `${config.siteUrl}/livre#book`,
+        },
+      },
+      // FAQ implicite sur le livre
+      {
+        '@type': 'FAQPage',
+        '@id': `${livreData.url}#faq`,
+        mainEntity: [
+          {
+            '@type': 'Question',
+            name: "Qu'apprendrez-vous de ce livre ?",
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: apprentissages.join(' • '),
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Qui gagnerait à lire ce livre ?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: `Ce livre s'adresse principalement aux ${livreData.audience.join(
+                ', '
+              )}. Il est particulièrement utile pour les managers qui souhaitent accompagner leur équipe vers plus d'autonomie et les directeurs de la transformation qui veulent favoriser l'adaptation et l'agilité.`,
+            },
+          },
+          {
+            '@type': 'Question',
+            name: "Qui est l'auteur ?",
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: livreData.author.description,
+            },
+          },
+        ],
+      },
+    ],
   }
 }
 
@@ -136,7 +288,7 @@ export function generateOrganizationStructuredData() {
     ...organizationData,
     sameAs: [
       // Ajoutez ici les liens vers les réseaux sociaux si disponibles
-      "https://www.linkedin.com/in/tmalo",
+      'https://www.linkedin.com/in/tmalo',
       // "https://twitter.com/coaching-pro"
     ],
     knowsAbout: [

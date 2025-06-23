@@ -1,8 +1,8 @@
-import { generateOffresStructuredData } from "@/lib/structured-data"
+import { generateOffresStructuredData, generateLivreStructuredData } from "@/lib/structured-data"
 
 interface StructuredDataProps {
   data?: object
-  type?: "offres" | "organization" | "custom"
+  type?: "offres" | "livre" | "organization" | "custom"
 }
 
 export default function StructuredData({ data, type = "custom" }: StructuredDataProps) {
@@ -10,6 +10,8 @@ export default function StructuredData({ data, type = "custom" }: StructuredData
 
   if (type === "offres") {
     structuredData = generateOffresStructuredData()
+  } else if (type === "livre") {
+    structuredData = generateLivreStructuredData()
   }
 
   if (!structuredData) return null
