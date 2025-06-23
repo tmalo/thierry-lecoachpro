@@ -1,13 +1,28 @@
 import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
 import OffreCard from "@/components/offre-card"
+import StructuredData from "@/components/structured-data"
 import { Clock, Calendar, ArrowRight } from "lucide-react"
 import Link from "next/link"
 import { offres } from "@/lib/offres"
+import type { Metadata } from "next"
 
+export const metadata: Metadata = {
+  title: "Mes offres de coaching | Coaching Professionnel",
+  description:
+    "Trois chemins pour sortir de l'urgence permanente et retrouver un leadership qui vous ressemble. Coaching individuel, coaching d'équipe et ateliers thématiques.",
+  keywords: ["coaching", "leadership", "management", "équipe", "formation", "développement professionnel"],
+  openGraph: {
+    title: "Mes offres de coaching",
+    description:
+      "Coaching individuel, coaching d'équipe et ateliers thématiques pour retrouver un leadership authentique.",
+    type: "website",
+  },
+}
 export default function OffresPage() {
   return (
     <div className="min-h-screen">
+      <StructuredData type="offres" />
       <Navigation />
 
       {/* Hero Section */}
