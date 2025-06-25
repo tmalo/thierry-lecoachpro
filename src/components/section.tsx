@@ -1,4 +1,4 @@
-import { tv } from "tailwind-variants";
+import { tv, type VariantProps } from "tailwind-variants";
 
 const sx = tv({
   base: "py-20",
@@ -16,19 +16,22 @@ const sx = tv({
   },
 });
 
-type SectionProps = Readonly<{
+type SectionVariants = VariantProps<typeof sx>;
+
+interface SectionProps  extends SectionVariants {
   children: React.ReactNode;
-  style: "none" | "gradient" | "gray" | "primary" | "white" | undefined;
-  centered: boolean;
-}>;
+	centered?: boolean | undefined;
+	className?: string | undefined;
+}
 
 export default function Section({
   children,
   style = "none",
   centered = false,
+	className = "",
 }: SectionProps) {
   return (
-    <section className={sx({ style })}>
+    <section className={`${className} ${sx({ style })}`}>
       <div
         className={
           centered
