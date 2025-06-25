@@ -21,8 +21,8 @@ export default function HomePage() {
           <div className="mx-auto mb-12 max-w-3xl">
             <p className="mb-6 text-xl leading-relaxed text-gray-700 md:text-2xl">
               <strong>
-                Rien n&apos;est plus motivant dans l&apos;adversité
-                qu&apos;une équipe engagée, créative et performante.
+                Rien n&apos;est plus motivant dans l&apos;adversité qu&apos;une
+                équipe engagée, créative et performante.
               </strong>
             </p>
             <p className="text-lg leading-relaxed text-gray-600 md:text-xl">
@@ -48,7 +48,6 @@ export default function HomePage() {
             </Link>
           </div>
         </div>
-
       </Section>
 
       {/* Mon approche unique */}
@@ -72,8 +71,8 @@ export default function HomePage() {
               Écoute poétique
             </h3>
             <p className="leading-relaxed text-gray-600">
-              Je vous écoute comme on écoute un poète, attentif à ce qui se
-              dit sans se dire, aux métaphores de votre vécu.
+              Je vous écoute comme on écoute un poète, attentif à ce qui se dit
+              sans se dire, aux métaphores de votre vécu.
             </p>
           </div>
 
@@ -85,8 +84,8 @@ export default function HomePage() {
               Approche composite
             </h3>
             <p className="leading-relaxed text-gray-600">
-              J&apos;orchestre plusieurs instruments théoriques pour composer
-              un cheminement interrogatif unique, adapté à vous.
+              J&apos;orchestre plusieurs instruments théoriques pour composer un
+              cheminement interrogatif unique, adapté à vous.
             </p>
           </div>
 
@@ -98,9 +97,8 @@ export default function HomePage() {
               Action mesurée
             </h3>
             <p className="leading-relaxed text-gray-600">
-              Des invitations à l&apos;action stratégiques et fluides, qui
-              vous rapprochent de vos objectifs sans bouleverser votre
-              contexte.
+              Des invitations à l&apos;action stratégiques et fluides, qui vous
+              rapprochent de vos objectifs sans bouleverser votre contexte.
             </p>
           </div>
         </div>
@@ -121,13 +119,13 @@ export default function HomePage() {
                   direction et la démotivation de vos collaborateurs.
                 </li>
                 <li>
-                  Si vous avez l&apos;intuition qu&apos;un autre leadership
-                  est possible — mais vous ne savez pas par où commencer.
+                  Si vous avez l&apos;intuition qu&apos;un autre leadership est
+                  possible — mais vous ne savez pas par où commencer.
                 </li>
                 <li>
-                  Si votre équipe s&apos;épuise dans les détails ou
-                  s&apos;égare dans de fausses urgences, pendant que vous
-                  portez seul·e l&apos;essentiel.
+                  Si votre équipe s&apos;épuise dans les détails ou s&apos;égare
+                  dans de fausses urgences, pendant que vous portez seul·e
+                  l&apos;essentiel.
                 </li>
                 <li>
                   Si vous êtes fatigué·e de devoir montrer une façade assurée
@@ -137,7 +135,6 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-
       </Section>
 
       {/* Vous repartez avec */}
@@ -165,9 +162,9 @@ export default function HomePage() {
                 Créativité libérée
               </h3>
               <p className="leading-relaxed text-gray-700">
-                Des idées neuves, nées de cette créativité que seule la
-                sérénité peut offrir, pour continuer à écrire le poème de
-                votre vie professionnelle avec authenticité.
+                Des idées neuves, nées de cette créativité que seule la sérénité
+                peut offrir, pour continuer à écrire le poème de votre vie
+                professionnelle avec authenticité.
               </p>
             </div>
 
@@ -177,8 +174,8 @@ export default function HomePage() {
               </h3>
               <p className="leading-relaxed text-gray-700">
                 Des invitations à l&apos;action stratégiques et fluides, qui
-                demandent peu d&apos;effort mais vous rapprochent résolument
-                de là où vous voulez aller.
+                demandent peu d&apos;effort mais vous rapprochent résolument de
+                là où vous voulez aller.
               </p>
             </div>
 
@@ -200,9 +197,9 @@ export default function HomePage() {
       <Section style="gray">
         <div className="mx-auto max-w-4xl text-center">
           <blockquote className="text-primary text-2xl leading-relaxed font-light italic md:text-3xl">
-            &ldquo;Pour que vos prochaines décisions ne soient plus
-            prisonnières de l&apos;urgence, mais guidées par ce qui compte
-            vraiment pour vous.&rdquo;
+            &ldquo;Pour que vos prochaines décisions ne soient plus prisonnières
+            de l&apos;urgence, mais guidées par ce qui compte vraiment pour
+            vous.&rdquo;
           </blockquote>
         </div>
       </Section>
@@ -213,9 +210,9 @@ export default function HomePage() {
           Prêt à être écouté comme on écoute un poète ?
         </h2>
         <p className="mx-auto mb-8 max-w-2xl text-xl text-blue-100">
-          Commençons par une conversation. Sans engagement, juste
-          l&apos;espace d&apos;explorer ensemble ce qui pourrait émerger de
-          cette écoute authentique.
+          Commençons par une conversation. Sans engagement, juste l&apos;espace
+          d&apos;explorer ensemble ce qui pourrait émerger de cette écoute
+          authentique.
         </p>
         <Link
           href="/contact"
@@ -224,7 +221,6 @@ export default function HomePage() {
           Commençons cette écoute
           <ArrowRight size={20} />
         </Link>
-
       </Section>
 
       <Footer />

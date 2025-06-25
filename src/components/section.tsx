@@ -18,17 +18,17 @@ const sx = tv({
 
 type SectionVariants = VariantProps<typeof sx>;
 
-interface SectionProps  extends SectionVariants {
+interface SectionProps extends SectionVariants {
   children: React.ReactNode;
-	centered?: boolean | undefined;
-	className?: string | undefined;
+  centered?: boolean | undefined;
+  className?: string | undefined;
 }
 
 export default function Section({
   children,
   style = "none",
   centered = false,
-	className = "",
+  className = "",
 }: SectionProps) {
   return (
     <section className={`${className} ${sx({ style })}`}>
