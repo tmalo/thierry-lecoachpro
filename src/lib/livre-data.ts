@@ -1,25 +1,25 @@
-import { config } from "./config"
+import { config } from "./config";
 
 export interface LivreData {
-  title: string
-  subtitle: string
+  title: string;
+  subtitle: string;
   author: {
-    name: string
-    jobTitle: string
-    description: string
-  }
-  description: string
-  genre: string[]
-  audience: string[]
-  about: string[]
-  inLanguage: string
-  publisher?: string
-  isbn?: string
-  datePublished?: string
-  numberOfPages?: number
-  bookFormat: string[]
-  image?: string
-  url: string
+    name: string;
+    jobTitle: string;
+    description: string;
+  };
+  description: string;
+  genre: string[];
+  audience: string[];
+  about: string[];
+  inLanguage: string;
+  publisher?: string;
+  isbn?: string;
+  datePublished?: string;
+  numberOfPages?: number;
+  bookFormat: string[];
+  image?: string;
+  url: string;
 }
 
 export const livreData: LivreData = {
@@ -51,14 +51,14 @@ export const livreData: LivreData = {
   // numberOfPages: 250, // À ajouter quand disponible
   bookFormat: ["Paperback", "EBook"], // À adapter selon les formats disponibles
   url: `${config.siteUrl}/livre`,
-}
+};
 
 // Apprentissages du livre
 export const apprentissages = [
   "Une autre façon de s'organiser collectivement — pour favoriser l'autonomie, la réactivité et la prise d'initiatives dans l'équipe",
   "Une nouvelle approche du management — adapté à l'incertitude et à la complexité qui caractérisent le monde d'aujourd'hui",
   "Mettre l'incertitude à profit dans vos décisions — et rester en mouvement, y compris quand les prévisions ne peuvent être fiables",
-]
+];
 
 // Public cible détaillé
 export const publicCible = {
@@ -73,4 +73,4 @@ export const publicCible = {
     "Affranchissez vous des réorganisations 'Big Bang'.",
     "Outillez la communication entre les managers métiers et ceux de l'IT.",
   ],
-}
+};

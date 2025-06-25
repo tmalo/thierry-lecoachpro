@@ -1,17 +1,16 @@
-import { type LucideIcon, User, Users, Lightbulb } from "lucide-react"
+import { type LucideIcon, User, Users, Lightbulb } from "lucide-react";
 
 export interface Offre {
-  sku: string
-  icon: LucideIcon
-  title: string
-  subtitle: string
-  description: string
-  audience: string
-  douleurs: string[]
-  benefices: string[]
-  modalites: string[]
+  sku: string;
+  icon: LucideIcon;
+  title: string;
+  subtitle: string;
+  description: string;
+  audience: string;
+  douleurs: string[];
+  benefices: string[];
+  modalites: string[];
 }
-
 
 export const offres: Offre[] = [
   {
@@ -95,4 +94,4 @@ export const offres: Offre[] = [
       "Support pédagogique personnalisé",
     ],
   },
-]
+];

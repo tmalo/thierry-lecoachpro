@@ -1,7 +1,7 @@
-import Navigation from '@/components/navigation'
-import Footer from '@/components/footer'
-import { ArrowRight, Ear, Layers, Target } from 'lucide-react'
-import Link from 'next/link'
+import Navigation from "@/components/navigation";
+import Footer from "@/components/footer";
+import { ArrowRight, Ear, Layers, Target } from "lucide-react";
+import Link from "next/link";
 
 export default function HomePage() {
   return (
@@ -11,38 +11,38 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-white to-gray-50 py-20 md:py-32">
         <div className="container-max section-padding">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="font-montserrat text-4xl md:text-6xl font-bold text-primary mb-8 animate-fade-in">
+          <div className="mx-auto max-w-4xl text-center">
+            <h1 className="font-montserrat text-primary animate-fade-in mb-8 text-4xl font-bold md:text-6xl">
               L&apos;équipe inspire,
               <br />
               <span className="text-gray-700">le leader respire</span>
             </h1>
 
-            <div className="max-w-3xl mx-auto mb-12">
-              <p className="text-xl md:text-2xl text-gray-700 leading-relaxed mb-6">
+            <div className="mx-auto mb-12 max-w-3xl">
+              <p className="mb-6 text-xl leading-relaxed text-gray-700 md:text-2xl">
                 <strong>
-                  Rien n&apos;est plus motivant dans l&apos;adversité qu&apos;une équipe
-                  engagée, créative et performante.
+                  Rien n&apos;est plus motivant dans l&apos;adversité
+                  qu&apos;une équipe engagée, créative et performante.
                 </strong>
               </p>
-              <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
+              <p className="text-lg leading-relaxed text-gray-600 md:text-xl">
                 J&apos;aide les managers à construire et à maintenir ce type
-                d&apos;équipe, grâce à un coaching sur mesure, qui redonne du souffle
-                au leadership et du sens à l&apos;action collective.
+                d&apos;équipe, grâce à un coaching sur mesure, qui redonne du
+                souffle au leadership et du sens à l&apos;action collective.
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col justify-center gap-4 sm:flex-row">
               <Link
                 href="/offres"
-                className="inline-flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-lg font-montserrat font-medium hover:bg-primary/90 transition-colors"
+                className="bg-primary font-montserrat hover:bg-primary/90 inline-flex items-center gap-2 rounded-lg px-8 py-4 font-medium text-white transition-colors"
               >
                 Découvrir mes offres
                 <ArrowRight size={20} />
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 border-2 border-primary text-primary px-8 py-4 rounded-lg font-montserrat font-medium hover:bg-primary hover:text-white transition-colors"
+                className="border-primary text-primary font-montserrat hover:bg-primary inline-flex items-center gap-2 rounded-lg border-2 px-8 py-4 font-medium transition-colors hover:text-white"
               >
                 Échanger ensemble
               </Link>
@@ -52,55 +52,56 @@ export default function HomePage() {
       </section>
 
       {/* Mon approche unique */}
-      <section className="py-20 bg-white">
+      <section className="bg-white py-20">
         <div className="container-max section-padding">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-primary mb-6">
+          <div className="mx-auto mb-16 max-w-3xl text-center">
+            <h2 className="font-montserrat text-primary mb-6 text-3xl font-bold md:text-4xl">
               Une approche qui vous écoute vraiment
             </h2>
-            <p className="text-lg text-gray-600 leading-relaxed">
+            <p className="text-lg leading-relaxed text-gray-600">
               Je vous accompagne avec une écoute sensible, un cheminement
               sur-mesure et des actions alignées avec vos convictions profondes.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+          <div className="grid gap-8 md:grid-cols-3">
+            <div className="p-6 text-center">
+              <div className="bg-primary/10 mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full">
                 <Ear className="text-primary" size={32} />
               </div>
-              <h3 className="font-montserrat text-xl font-semibold mb-4">
+              <h3 className="font-montserrat mb-4 text-xl font-semibold">
                 Écoute poétique
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="leading-relaxed text-gray-600">
                 Je vous écoute comme on écoute un poète, attentif à ce qui se
                 dit sans se dire, aux métaphores de votre vécu.
               </p>
             </div>
 
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+            <div className="p-6 text-center">
+              <div className="bg-primary/10 mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full">
                 <Layers className="text-primary" size={32} />
               </div>
-              <h3 className="font-montserrat text-xl font-semibold mb-4">
+              <h3 className="font-montserrat mb-4 text-xl font-semibold">
                 Approche composite
               </h3>
-              <p className="text-gray-600 leading-relaxed">
-                J&apos;orchestre plusieurs instruments théoriques pour composer un
-                cheminement interrogatif unique, adapté à vous.
+              <p className="leading-relaxed text-gray-600">
+                J&apos;orchestre plusieurs instruments théoriques pour composer
+                un cheminement interrogatif unique, adapté à vous.
               </p>
             </div>
 
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+            <div className="p-6 text-center">
+              <div className="bg-primary/10 mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full">
                 <Target className="text-primary" size={32} />
               </div>
-              <h3 className="font-montserrat text-xl font-semibold mb-4">
+              <h3 className="font-montserrat mb-4 text-xl font-semibold">
                 Action mesurée
               </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Des invitations à l&apos;action stratégiques et fluides, qui vous
-                rapprochent de vos objectifs sans bouleverser votre contexte.
+              <p className="leading-relaxed text-gray-600">
+                Des invitations à l&apos;action stratégiques et fluides, qui
+                vous rapprochent de vos objectifs sans bouleverser votre
+                contexte.
               </p>
             </div>
           </div>
@@ -108,28 +109,28 @@ export default function HomePage() {
       </section>
 
       {/* Target Audience Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="bg-gray-50 py-20">
         <div className="container-max section-padding">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-primary mb-12 text-center">
+          <div className="mx-auto max-w-4xl">
+            <h2 className="font-montserrat text-primary mb-12 text-center text-3xl font-bold md:text-4xl">
               Vous êtes au bon endroit
             </h2>
-            <div className="space-y-6 mb-12">
-              <div className="flex items-start gap-4 p-6 bg-white rounded-lg border-l-4 border-primary/20">
-                <ul className="space-y-1 text-gray-900 dark:text-gray-400 benefits">
+            <div className="mb-12 space-y-6">
+              <div className="border-primary/20 flex items-start gap-4 rounded-lg border-l-4 bg-white p-6">
+                <ul className="benefits space-y-1 text-gray-900 dark:text-gray-400">
                   <li>
-                    Si vous vous sentez &ldquo;entre le marteau et l&apos;enclume&rdquo;, pris·e
-                    entre la pression de votre direction et la démotivation de
-                    vos collaborateurs.
+                    Si vous vous sentez &ldquo;entre le marteau et
+                    l&apos;enclume&rdquo;, pris·e entre la pression de votre
+                    direction et la démotivation de vos collaborateurs.
                   </li>
                   <li>
-                    Si vous avez l&apos;intuition qu&apos;un autre leadership est possible
-                    — mais vous ne savez pas par où commencer.
+                    Si vous avez l&apos;intuition qu&apos;un autre leadership
+                    est possible — mais vous ne savez pas par où commencer.
                   </li>
                   <li>
-                    Si votre équipe s&apos;épuise dans les détails ou s&apos;égare dans de
-                    fausses urgences, pendant que vous portez seul·e
-                    l&apos;essentiel.
+                    Si votre équipe s&apos;épuise dans les détails ou
+                    s&apos;égare dans de fausses urgences, pendant que vous
+                    portez seul·e l&apos;essentiel.
                   </li>
                   <li>
                     Si vous êtes fatigué·e de devoir montrer une façade assurée
@@ -143,53 +144,53 @@ export default function HomePage() {
       </section>
 
       {/* Vous repartez avec */}
-      <section className="py-20 bg-white">
+      <section className="bg-white py-20">
         <div className="container-max section-padding">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-primary mb-12 text-center">
+          <div className="mx-auto max-w-4xl">
+            <h2 className="font-montserrat text-primary mb-12 text-center text-3xl font-bold md:text-4xl">
               Vous repartez avec
             </h2>
 
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-gray-50 p-8 rounded-lg">
-                <h3 className="font-montserrat text-xl font-semibold mb-4 text-primary">
+            <div className="grid gap-8 md:grid-cols-2">
+              <div className="rounded-lg bg-gray-50 p-8">
+                <h3 className="font-montserrat text-primary mb-4 text-xl font-semibold">
                   Clarté retrouvée
                 </h3>
-                <p className="text-gray-700 leading-relaxed">
-                  Un espace de réflexion à l&apos;abri des pressions, où vous pouvez
-                  avancer au rythme qui vous convient vraiment. De la clarté,
-                  même en pleine turbulence, pour choisir des actions en accord
-                  avec vos convictions.
+                <p className="leading-relaxed text-gray-700">
+                  Un espace de réflexion à l&apos;abri des pressions, où vous
+                  pouvez avancer au rythme qui vous convient vraiment. De la
+                  clarté, même en pleine turbulence, pour choisir des actions en
+                  accord avec vos convictions.
                 </p>
               </div>
 
-              <div className="bg-gray-50 p-8 rounded-lg">
-                <h3 className="font-montserrat text-xl font-semibold mb-4 text-primary">
+              <div className="rounded-lg bg-gray-50 p-8">
+                <h3 className="font-montserrat text-primary mb-4 text-xl font-semibold">
                   Créativité libérée
                 </h3>
-                <p className="text-gray-700 leading-relaxed">
+                <p className="leading-relaxed text-gray-700">
                   Des idées neuves, nées de cette créativité que seule la
                   sérénité peut offrir, pour continuer à écrire le poème de
                   votre vie professionnelle avec authenticité.
                 </p>
               </div>
 
-              <div className="bg-gray-50 p-8 rounded-lg">
-                <h3 className="font-montserrat text-xl font-semibold mb-4 text-primary">
+              <div className="rounded-lg bg-gray-50 p-8">
+                <h3 className="font-montserrat text-primary mb-4 text-xl font-semibold">
                   Actions alignées
                 </h3>
-                <p className="text-gray-700 leading-relaxed">
+                <p className="leading-relaxed text-gray-700">
                   Des invitations à l&apos;action stratégiques et fluides, qui
-                  demandent peu d&apos;effort mais vous rapprochent résolument de là
-                  où vous voulez aller.
+                  demandent peu d&apos;effort mais vous rapprochent résolument
+                  de là où vous voulez aller.
                 </p>
               </div>
 
-              <div className="bg-gray-50 p-8 rounded-lg">
-                <h3 className="font-montserrat text-xl font-semibold mb-4 text-primary">
+              <div className="rounded-lg bg-gray-50 p-8">
+                <h3 className="font-montserrat text-primary mb-4 text-xl font-semibold">
                   Leadership authentique
                 </h3>
-                <p className="text-gray-700 leading-relaxed">
+                <p className="leading-relaxed text-gray-700">
                   La capacité de guider votre équipe sans vous épuiser ni
                   compromettre vos valeurs, en devenant acteur des changements
                   plutôt que simple spectateur.
@@ -201,31 +202,32 @@ export default function HomePage() {
       </section>
 
       {/* Quote Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="bg-gray-50 py-20">
         <div className="container-max section-padding">
-          <div className="max-w-4xl mx-auto text-center">
-            <blockquote className="text-2xl md:text-3xl text-primary font-light leading-relaxed italic">
-              &ldquo;Pour que vos prochaines décisions ne soient plus prisonnières de
-              l&apos;urgence, mais guidées par ce qui compte vraiment pour vous.&rdquo;
+          <div className="mx-auto max-w-4xl text-center">
+            <blockquote className="text-primary text-2xl leading-relaxed font-light italic md:text-3xl">
+              &ldquo;Pour que vos prochaines décisions ne soient plus
+              prisonnières de l&apos;urgence, mais guidées par ce qui compte
+              vraiment pour vous.&rdquo;
             </blockquote>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-primary text-white">
+      <section className="bg-primary py-20 text-white">
         <div className="container-max section-padding text-center">
-          <h2 className="font-montserrat text-3xl md:text-4xl font-bold mb-6">
+          <h2 className="font-montserrat mb-6 text-3xl font-bold md:text-4xl">
             Prêt à être écouté comme on écoute un poète ?
           </h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Commençons par une conversation. Sans engagement, juste l&apos;espace
-            d&apos;explorer ensemble ce qui pourrait émerger de cette écoute
-            authentique.
+          <p className="mx-auto mb-8 max-w-2xl text-xl text-blue-100">
+            Commençons par une conversation. Sans engagement, juste
+            l&apos;espace d&apos;explorer ensemble ce qui pourrait émerger de
+            cette écoute authentique.
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 bg-white text-primary px-8 py-4 rounded-lg font-montserrat font-medium hover:bg-gray-100 transition-colors"
+            className="text-primary font-montserrat inline-flex items-center gap-2 rounded-lg bg-white px-8 py-4 font-medium transition-colors hover:bg-gray-100"
           >
             Commençons cette écoute
             <ArrowRight size={20} />
@@ -235,5 +237,5 @@ export default function HomePage() {
 
       <Footer />
     </div>
-  )
+  );
 }

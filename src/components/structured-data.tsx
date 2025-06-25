@@ -1,20 +1,26 @@
-import { generateOffresStructuredData, generateLivreStructuredData } from "@/lib/structured-data"
+import {
+  generateOffresStructuredData,
+  generateLivreStructuredData,
+} from "@/lib/structured-data";
 
 interface StructuredDataProps {
-  data?: object
-  type?: "offres" | "livre" | "organization" | "custom"
+  data?: object;
+  type?: "offres" | "livre" | "organization" | "custom";
 }
 
-export default function StructuredData({ data, type = "custom" }: StructuredDataProps) {
-  let structuredData = data
+export default function StructuredData({
+  data,
+  type = "custom",
+}: StructuredDataProps) {
+  let structuredData = data;
 
   if (type === "offres") {
-    structuredData = generateOffresStructuredData()
+    structuredData = generateOffresStructuredData();
   } else if (type === "livre") {
-    structuredData = generateLivreStructuredData()
+    structuredData = generateLivreStructuredData();
   }
 
-  if (!structuredData) return null
+  if (!structuredData) return null;
 
   return (
     <script
@@ -23,5 +29,5 @@ export default function StructuredData({ data, type = "custom" }: StructuredData
         __html: JSON.stringify(structuredData, null, 2),
       }}
     />
-  )
+  );
 }
