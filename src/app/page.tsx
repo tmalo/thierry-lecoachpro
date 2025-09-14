@@ -1,10 +1,15 @@
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
+import TestimonialCarousel from "@/components/testimonial-carousel";
 import { ArrowRight, Ear, Layers, Target } from "lucide-react";
 import Link from "next/link";
 import Section from "@/components/section";
+import { getTestimonialsWithCache } from "@/lib/testimonials";
+import { CtaSection, CtaButton } from "@/components/cta-section";
 
-export default function HomePage() {
+export default async function HomePage() {
+  const tem = await getTestimonialsWithCache();
+
   return (
     <div className="min-h-screen">
       <Navigation />
@@ -193,6 +198,33 @@ export default function HomePage() {
         </div>
       </Section>
 
+      {/* Témoignages Section */}
+      <section className="bg-gray-50 py-20">
+        <div className="container-max section-padding">
+          <div className="mx-auto max-w-4xl">
+            <h2 className="font-montserrat text-primary mb-4 text-center text-3xl font-bold md:text-4xl">
+              Ils ont retrouvé leur souffle
+            </h2>
+            <p className="mb-12 text-center text-lg text-gray-600">
+              Découvrez comment d&apos;autres managers ont transformé leur
+              leadership
+            </p>
+
+            <TestimonialCarousel testimonials={tem} />
+
+            <div className="mt-8 text-center">
+              <Link
+                href="/temoignages"
+                className="text-primary font-montserrat inline-flex items-center gap-2 font-medium transition-all hover:gap-3"
+              >
+                Voir tous les témoignages
+                <ArrowRight size={20} />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Quote Section */}
       <Section style="gray">
         <div className="mx-auto max-w-4xl text-center">
@@ -205,23 +237,16 @@ export default function HomePage() {
       </Section>
 
       {/* CTA Section */}
-      <Section style="primary" centered>
-        <h2 className="font-montserrat mb-6 text-3xl font-bold md:text-4xl">
-          Prêt à être écouté comme on écoute un poète ?
-        </h2>
-        <p className="mx-auto mb-8 max-w-2xl text-xl text-blue-100">
-          Commençons par une conversation. Sans engagement, juste l&apos;espace
-          d&apos;explorer ensemble ce qui pourrait émerger de cette écoute
-          authentique.
-        </p>
-        <Link
-          href="/contact"
-          className="text-primary font-montserrat inline-flex items-center gap-2 rounded-lg bg-white px-8 py-4 font-medium transition-colors hover:bg-gray-100"
-        >
+      <CtaSection
+        title="Prêt à être écouté comme on écoute un poète ?"
+        description="Commençons par une conversation. Sans engagement, juste l'espace
+          d'explorer ensemble ce qui pourrait émerger de cette écoute
+          authentique."
+      >
+        <CtaButton href="/contact" icon={<ArrowRight size={20} />}>
           Commençons cette écoute
-          <ArrowRight size={20} />
-        </Link>
-      </Section>
+        </CtaButton>
+      </CtaSection>
 
       <Footer />
     </div>
