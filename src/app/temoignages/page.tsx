@@ -70,8 +70,8 @@ export default async function TemoignagesPage() {
                 </h2>
                 <p className="mb-6 leading-relaxed text-gray-600">
                   Les premiers témoignages de nos clients seront bientôt
-                  disponibles. En attendant, ontactez-moi pour
-                  découvrir comment je peux vous accompagner.
+                  disponibles. En attendant, ontactez-moi pour découvrir comment
+                  je peux vous accompagner.
                 </p>
                 <Link
                   href="/contact"
@@ -144,8 +144,9 @@ export default async function TemoignagesPage() {
         <div className="container-max section-padding">
           <div className="mx-auto max-w-4xl text-center">
             <blockquote className="text-primary text-2xl leading-relaxed font-light italic md:text-3xl">
-              &ldquo;Chaque témoignage raconte une histoire unique de transformation.
-              La vôtre commence par une simple conversation.&rdquo;
+              &ldquo;Chaque témoignage raconte une histoire unique de
+              transformation. La vôtre commence par une simple
+              conversation.&rdquo;
             </blockquote>
           </div>
         </div>
