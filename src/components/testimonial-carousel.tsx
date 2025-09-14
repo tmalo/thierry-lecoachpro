@@ -61,7 +61,11 @@ export default function TestimonialCarousel({ testimonials }) {
         >
           {testimonials.map((testimonial: Testimonial) => (
             <div key={testimonial.id} className="w-full flex-shrink-0">
-              <TestimonialCard testimonial={testimonial} variant="compact" />
+              <TestimonialCard
+                testimonial={testimonial}
+                variant="compact"
+                showReadMore={true}
+              />
             </div>
           ))}
         </div>

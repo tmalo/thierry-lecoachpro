@@ -1,21 +1,24 @@
-import { Quote, Calendar, Briefcase, Tag } from "lucide-react";
+import { Quote, Calendar, Briefcase, Tag, ExternalLink } from "lucide-react";
 import {
   formatTestimonialDate,
   getAvatarUrl,
   type Testimonial,
 } from "@/types/testimonial";
 import { getOffreBySku } from "@/lib/offres";
+import Link from "next/link";
 
 interface TestimonialCardProps {
   testimonial: Testimonial;
   variant?: "full" | "compact";
   showOffre?: boolean;
+  showReadMore?: boolean;
 }
 
 export default function TestimonialCard({
   testimonial,
   variant = "full",
   showOffre = false,
+  showReadMore = false,
 }: TestimonialCardProps) {
   const avatarUrl = getAvatarUrl(testimonial.person, testimonial.gender);
   const offre = getOffreBySku(testimonial.offre);
@@ -51,11 +54,23 @@ export default function TestimonialCard({
           &ldquo;{testimonial.description}&rdquo;
         </blockquote>
 
-        <div className="mt-4 flex items-center gap-2 border-t border-gray-100 pt-4">
-          <Calendar size={14} className="text-gray-400" />
-          <span className="text-sm text-gray-500">
-            {formatTestimonialDate(testimonial.date)}
-          </span>
+        <div className="mt-4 flex items-center justify-between border-t border-gray-100 pt-4">
+          <div className="flex items-center gap-2">
+            <Calendar size={14} className="text-gray-400" />
+            <span className="text-sm text-gray-500">
+              {formatTestimonialDate(testimonial.date)}
+            </span>
+          </div>
+
+          {showReadMore && (
+            <Link
+              href={`/temoignages/${testimonial.id}`}
+              className="text-primary inline-flex items-center gap-1 text-sm font-medium transition-all hover:gap-2"
+            >
+              Lire plus
+              <ExternalLink size={12} />
+            </Link>
+          )}
         </div>
       </div>
     );
