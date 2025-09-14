@@ -47,7 +47,7 @@ export default function TestimonialCard({
           </div>
         </div>
 
-        <blockquote className="font-merriweather flex-1 leading-relaxed text-primary italic">
+        <blockquote className="font-merriweather text-primary flex-1 leading-relaxed italic">
           &ldquo;{testimonial.description}&rdquo;
         </blockquote>
 
@@ -86,9 +86,7 @@ export default function TestimonialCard({
             {offre && (
               <div className="mt-2 flex items-center gap-2">
                 <Tag size={14} className="text-gray-400" />
-                <span className="text-sm text-gray-500">
-                  {offre.title}
-                </span>
+                <span className="text-sm text-gray-500">{offre.title}</span>
               </div>
             )}
             <div className="mt-2 flex items-center gap-2">
@@ -107,7 +105,7 @@ export default function TestimonialCard({
 
         {/* Description principale */}
         <div className="bg-primary/5 mb-8 rounded-lg p-6">
-          <blockquote className="font-merriweather text-lg leading-relaxed text-primary italic">
+          <blockquote className="font-merriweather text-primary text-lg leading-relaxed italic">
             &ldquo;{testimonial.description}&rdquo;
           </blockquote>
         </div>
@@ -119,7 +117,7 @@ export default function TestimonialCard({
               <h3 className="font-montserrat mb-3 text-lg font-semibold text-gray-800">
                 Avant le coaching
               </h3>
-              <p className="leading-relaxed text-gray">
+              <p className="text-gray leading-relaxed">
                 {testimonial.content.avant}
               </p>
             </div>
@@ -130,7 +128,7 @@ export default function TestimonialCard({
               <h3 className="font-montserrat mb-3 text-lg font-semibold text-gray-800">
                 Les difficultés au quotidien
               </h3>
-              <p className="leading-relaxed text-gray">
+              <p className="text-gray leading-relaxed">
                 {testimonial.content.difficultes}
               </p>
             </div>
@@ -141,7 +139,7 @@ export default function TestimonialCard({
               <h3 className="font-montserrat mb-3 text-lg font-semibold text-gray-800">
                 Ce que le coaching m'a apporté
               </h3>
-              <p className="leading-relaxed text-gray">
+              <p className="text-gray leading-relaxed">
                 {testimonial.content.apport}
               </p>
             </div>

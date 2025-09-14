@@ -7,7 +7,7 @@ import Section from "@/components/section";
 import { getTestimonialsWithCache } from "@/lib/testimonials";
 
 export default async function HomePage() {
-  const tem = await getTestimonialsWithCache()
+  const tem = await getTestimonialsWithCache();
 
   return (
     <div className="min-h-screen">

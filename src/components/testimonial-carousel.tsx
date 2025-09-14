@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import TestimonialCard from "./testimonial-card";
-import { Testimonial } from "@/types/testimonial"
+import { Testimonial } from "@/types/testimonial";
 
 export default function TestimonialCarousel({ testimonials }) {
   const [currentIndex, setCurrentIndex] = useState(0);
