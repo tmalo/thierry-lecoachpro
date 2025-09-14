@@ -3,8 +3,9 @@ import Link from "next/link";
 import Section from "./section";
 
 type CtaSectionProps = {
-  title: string;
+  title?: string;
   description: string;
+  quote?: boolean | undefined;
   children?: React.ReactNode;
 };
 
@@ -17,17 +18,35 @@ type CtaButtonProps = {
   onClick?: () => void;
 };
 
-export function CtaSection({ title, description, children }: CtaSectionProps) {
+export function CtaSection({
+  title,
+  description,
+  quote = false,
+  children,
+}: CtaSectionProps) {
   return (
     <Section style="primary" centered>
-      <h2 className="font-montserrat mb-6 text-3xl font-bold md:text-4xl">
-        {title}
-      </h2>
-      {description && (
-        <p className="mx-auto mb-8 max-w-2xl text-xl text-blue-100">
-          {description}
-        </p>
+      {title && (
+        <h2
+          id="cta-title"
+          className="font-montserrat mb-6 text-3xl font-bold md:text-4xl"
+        >
+          {title}
+        </h2>
       )}
+
+      {description &&
+        (quote ? (
+          <div className="mx-auto max-w-4xl text-center">
+            <blockquote className="mb-8 text-2xl leading-relaxed font-light italic md:text-3xl">
+              &ldquo;{description}&rdquo;
+            </blockquote>
+          </div>
+        ) : (
+          <p className="mx-auto mb-8 max-w-2xl text-xl text-blue-100">
+            {description}
+          </p>
+        ))}
 
       {children}
     </Section>
