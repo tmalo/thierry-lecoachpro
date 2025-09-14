@@ -6,6 +6,7 @@ import { Clock, Calendar, ArrowRight } from "lucide-react";
 import { offres } from "@/lib/offres";
 import type { Metadata } from "next";
 import { CtaSection, CtaButton } from "@/components/cta-section";
+import Section from "@/components/section";
 
 export const metadata: Metadata = {
   title: "Mes offres de coaching | Coaching Professionnel",
@@ -33,35 +34,30 @@ export default function OffresPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-white to-gray-50 py-20">
-        <div className="container-max section-padding">
-          <div className="mx-auto max-w-4xl text-center">
-            <h1 className="font-montserrat text-primary mb-6 text-4xl font-bold md:text-5xl">
-              Mes offres de coaching
-            </h1>
-            <p className="text-xl leading-relaxed text-gray-600">
-              Trois chemins pour sortir de l&apos;urgence permanente et
-              retrouver un leadership qui vous ressemble. Chaque accompagnement
-              est pensé pour vous redonner du souffle et de la clarté.
-            </p>
-          </div>
+      <Section style="gradient">
+        <div className="mx-auto max-w-4xl text-center">
+          <h1 className="font-montserrat text-primary mb-6 text-4xl font-bold md:text-5xl">
+            Mes offres de coaching
+          </h1>
+          <p className="text-xl leading-relaxed text-gray-600">
+            Trois chemins pour sortir de l&apos;urgence permanente et retrouver
+            un leadership qui vous ressemble. Chaque accompagnement est pensé
+            pour vous redonner du souffle et de la clarté.
+          </p>
         </div>
-      </section>
+      </Section>
 
       {/* Offres Section */}
-      <section className="py-20">
-        <div className="container-max section-padding">
-          <div className="space-y-20">
-            {offres.map((offre) => (
-              <OffreCard key={offre.sku} offre={offre} />
-            ))}
-          </div>
+      <Section>
+        <div className="space-y-20">
+          {offres.map((offre) => (
+            <OffreCard key={offre.sku} offre={offre} />
+          ))}
         </div>
-      </section>
+      </Section>
 
       {/* Focus Coaching Individuel */}
-      <section className="bg-gray-50 py-20">
-        <div className="container-max section-padding">
+      <Section style="gray">
           <div className="mx-auto max-w-4xl">
             <h2 className="font-montserrat text-primary mb-8 text-center text-3xl font-bold">
               Le coaching individuel en détail
@@ -107,12 +103,10 @@ export default function OffresPage() {
               </p>
             </div>
           </div>
-        </div>
-      </section>
+      </Section>
 
       {/* Quote Section */}
-      <section className="bg-white py-20">
-        <div className="container-max section-padding">
+      <Section style="white">
           <div className="mx-auto max-w-4xl text-center">
             <blockquote className="text-primary text-2xl leading-relaxed font-light italic md:text-3xl">
               &ldquo;Chaque accompagnement est une invitation à sortir de la
@@ -120,8 +114,7 @@ export default function OffresPage() {
               conscience.&rdquo;
             </blockquote>
           </div>
-        </div>
-      </section>
+      </Section>
 
       {/* CTA Section */}
       <CtaSection
