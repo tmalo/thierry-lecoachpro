@@ -152,7 +152,7 @@ export default function TestimonialCard({
           {testimonial.content.apport && (
             <div>
               <h3 className="font-montserrat mb-3 text-lg font-semibold text-gray-800">
-                Ce que le coaching m'a apporté
+                Ce que le coaching m&apos;a apporté
               </h3>
               <p className="text-gray leading-relaxed">
                 {testimonial.content.apport}

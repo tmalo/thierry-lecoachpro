@@ -5,7 +5,13 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import TestimonialCard from "./testimonial-card";
 import { Testimonial } from "@/types/testimonial";
 
-export default function TestimonialCarousel({ testimonials }) {
+interface TestimonialCarouselProps {
+  testimonials: Testimonial[];
+}
+
+export default function TestimonialCarousel({
+  testimonials,
+}: TestimonialCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 

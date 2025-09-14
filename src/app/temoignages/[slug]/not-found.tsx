@@ -20,7 +20,8 @@ export default function NotFound() {
             </h1>
 
             <p className="mb-8 text-lg text-gray-600">
-              Le témoignage que vous recherchez n'existe pas ou a été supprimé.
+              Le témoignage que vous recherchez n&apos;existe pas ou a été
+              supprimé.
             </p>
 
             <div className="flex flex-col justify-center gap-4 sm:flex-row">

@@ -70,8 +70,8 @@ export default async function TemoignagesPage() {
                 </h2>
                 <p className="mb-6 leading-relaxed text-gray-600">
                   Les premiers témoignages de nos clients seront bientôt
-                  disponibles. En attendant, n'hésitez pas à nous contacter pour
-                  découvrir comment nous pouvons vous accompagner.
+                  disponibles. En attendant, ontactez-moi pour
+                  découvrir comment je peux vous accompagner.
                 </p>
                 <Link
                   href="/contact"
@@ -112,7 +112,7 @@ export default async function TemoignagesPage() {
                     95%
                   </div>
                   <p className="text-gray-600">
-                    de clients satisfaits recommandent l'accompagnement
+                    de clients satisfaits recommandent l&apos;accompagnement
                   </p>
                 </div>
 
@@ -130,7 +130,7 @@ export default async function TemoignagesPage() {
                     100%
                   </div>
                   <p className="text-gray-600">
-                    d'approche personnalisée selon vos enjeux
+                    d&apos;approche personnalisée selon vos enjeux
                   </p>
                 </div>
               </div>
@@ -144,8 +144,8 @@ export default async function TemoignagesPage() {
         <div className="container-max section-padding">
           <div className="mx-auto max-w-4xl text-center">
             <blockquote className="text-primary text-2xl leading-relaxed font-light italic md:text-3xl">
-              "Chaque témoignage raconte une histoire unique de transformation.
-              La vôtre commence par une simple conversation."
+              &ldquo;Chaque témoignage raconte une histoire unique de transformation.
+              La vôtre commence par une simple conversation.&rdquo;
             </blockquote>
           </div>
         </div>
