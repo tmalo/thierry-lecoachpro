@@ -1,10 +1,14 @@
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
+import TestimonialCarousel from "@/components/testimonial-carousel";
 import { ArrowRight, Ear, Layers, Target } from "lucide-react";
 import Link from "next/link";
 import Section from "@/components/section";
+import { getTestimonialsWithCache } from "@/lib/testimonials";
 
-export default function HomePage() {
+export default async function HomePage() {
+  const tem = await getTestimonialsWithCache()
+
   return (
     <div className="min-h-screen">
       <Navigation />
@@ -192,6 +196,33 @@ export default function HomePage() {
           </div>
         </div>
       </Section>
+
+      {/* Témoignages Section */}
+      <section className="bg-gray-50 py-20">
+        <div className="container-max section-padding">
+          <div className="mx-auto max-w-4xl">
+            <h2 className="font-montserrat text-primary mb-4 text-center text-3xl font-bold md:text-4xl">
+              Ils ont retrouvé leur souffle
+            </h2>
+            <p className="mb-12 text-center text-lg text-gray-600">
+              Découvrez comment d&apos;autres managers ont transformé leur
+              leadership
+            </p>
+
+            <TestimonialCarousel testimonials={tem} />
+
+            <div className="mt-8 text-center">
+              <Link
+                href="/temoignages"
+                className="text-primary font-montserrat inline-flex items-center gap-2 font-medium transition-all hover:gap-3"
+              >
+                Voir tous les témoignages
+                <ArrowRight size={20} />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Quote Section */}
       <Section style="gray">

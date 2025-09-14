@@ -95,3 +95,8 @@ export const offres: Offre[] = [
     ],
   },
 ];
+
+// Fonction pour récupérer une offre à partir de son SKU
+export function getOffreBySku(sku: string): Offre | undefined {
+  return offres.find((offre) => offre.sku === sku)
+}
