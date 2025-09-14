@@ -3,9 +3,9 @@ import Footer from "@/components/footer";
 import OffreCard from "@/components/offre-card";
 import StructuredData from "@/components/structured-data";
 import { Clock, Calendar, ArrowRight } from "lucide-react";
-import Link from "next/link";
 import { offres } from "@/lib/offres";
 import type { Metadata } from "next";
+import { CtaSection, CtaButton } from "@/components/cta-section";
 
 export const metadata: Metadata = {
   title: "Mes offres de coaching | Coaching Professionnel",
@@ -124,24 +124,15 @@ export default function OffresPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-primary py-20 text-white">
-        <div className="container-max section-padding text-center">
-          <h2 className="font-montserrat mb-6 text-3xl font-bold md:text-4xl">
-            Prêt à sortir de l&apos;urgence permanente ?
-          </h2>
-          <p className="mx-auto mb-8 max-w-2xl text-xl text-blue-100">
-            Commençons par identifier ensemble l&apos;accompagnement qui vous
-            permettra de retrouver votre souffle et votre clarté de leader.
-          </p>
-          <Link
-            href="/contact"
-            className="text-primary font-montserrat inline-flex items-center gap-2 rounded-lg bg-white px-8 py-4 font-medium transition-colors hover:bg-gray-100"
-          >
-            Planifier notre premier échange
-            <ArrowRight size={20} />
-          </Link>
-        </div>
-      </section>
+      <CtaSection
+        variant="section"
+        title="Prêt à sortir de l'urgence permanente ?"
+        description="Commençons par identifier ensemble l'accompagnement qui vous permettra de retrouver votre souffle et votre clarté de leader."
+      >
+        <CtaButton href="/contact" icon={<ArrowRight size={20} />}>
+          Planifier notre premier échange
+        </CtaButton>
+      </CtaSection>
 
       <Footer />
     </div>

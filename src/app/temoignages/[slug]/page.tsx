@@ -11,6 +11,7 @@ import {
 import type { Metadata } from "next";
 import { getOffreBySku } from "@/lib/offres";
 import { formatTestimonialDate } from "@/types/testimonial";
+import { CtaSection, CtaButton } from "@/components/cta-section";
 
 interface TestimonialPageProps {
   params: Promise<{
@@ -182,6 +183,17 @@ export default async function Page({ params }: TestimonialPageProps) {
         </section>
       )}
 
+      {/* CTA Section */}
+      <CtaSection
+        variant="section"
+        title="Inspiré par cette transformation ?"
+        description={`Comme ${testimonial.person}, vous pouvez retrouver votre souffle et transformer votre leadership. Commençons par une conversation.`}
+      >
+        <CtaButton href="/contact" icon={<ArrowRight size={20} />}>
+          Commencer ma transformation
+        </CtaButton>
+      </CtaSection>
+
       {/* Navigation entre témoignages */}
       <section className="bg-white py-16">
         <div className="container-max section-padding">
@@ -267,26 +279,6 @@ export default async function Page({ params }: TestimonialPageProps) {
               </Link>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="bg-primary py-20 text-white">
-        <div className="container-max section-padding text-center">
-          <h2 className="font-montserrat mb-6 text-3xl font-bold md:text-4xl">
-            Inspiré par cette transformation ?
-          </h2>
-          <p className="mx-auto mb-8 max-w-2xl text-xl text-blue-100">
-            Comme {testimonial.person}, vous pouvez retrouver votre souffle et
-            transformer votre leadership. Commençons par une conversation.
-          </p>
-          <Link
-            href="/contact"
-            className="text-primary font-montserrat inline-flex items-center gap-2 rounded-lg bg-white px-8 py-4 font-medium transition-colors hover:bg-gray-100"
-          >
-            Commencer ma transformation
-            <ArrowRight size={20} />
-          </Link>
         </div>
       </section>
 

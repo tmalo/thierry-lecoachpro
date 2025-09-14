@@ -5,6 +5,7 @@ import { MessageCircle, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { getTestimonialsWithCache } from "@/lib/testimonials";
 import type { Metadata } from "next";
+import { CtaSection, CtaButton } from "@/components/cta-section";
 
 export const metadata: Metadata = {
   title: "Témoignages clients | Coaching Professionnel",
@@ -153,25 +154,16 @@ export default async function TemoignagesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-primary py-20 text-white">
-        <div className="container-max section-padding text-center">
-          <h2 className="font-montserrat mb-6 text-3xl font-bold md:text-4xl">
-            Prêt à écrire votre propre témoignage ?
-          </h2>
-          <p className="mx-auto mb-8 max-w-2xl text-xl text-blue-100">
-            Rejoignez ces managers qui ont retrouvé leur souffle et transformé
+      <CtaSection
+        title="Prêt à écrire votre propre témoignage ?"
+        description="Rejoignez ces managers qui ont retrouvé leur souffle et transformé
             leur leadership. Votre transformation commence par un premier
-            échange.
-          </p>
-          <Link
-            href="/contact"
-            className="text-primary font-montserrat inline-flex items-center gap-2 rounded-lg bg-white px-8 py-4 font-medium transition-colors hover:bg-gray-100"
-          >
-            Commencer ma transformation
-            <ArrowRight size={20} />
-          </Link>
-        </div>
-      </section>
+            échange."
+      >
+        <CtaButton href="/contact" icon={<ArrowRight size={20} />}>
+          Commencer ma transformation
+        </CtaButton>
+      </CtaSection>
 
       <Footer />
     </div>

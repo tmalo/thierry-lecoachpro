@@ -7,6 +7,7 @@ import Image from "next/image";
 import { livreData, apprentissages, publicCible } from "@/lib/livre-data";
 import type { Metadata } from "next";
 import Section from "@/components/section";
+import { CtaSection, CtaButton } from "@/components/cta-section";
 
 export const metadata: Metadata = {
   title: `${livreData.title} - ${livreData.subtitle} | Coaching Professionnel`,
@@ -205,28 +206,24 @@ export default function LivrePage() {
       </Section>
 
       {/* CTA Section */}
-      <Section style="primary" centered>
-        <h2 className="font-montserrat mb-6 text-3xl font-bold md:text-4xl">
-          Prêt à découvrir la méthode 2apex ?
-        </h2>
-        <p className="mx-auto mb-8 max-w-2xl text-xl text-blue-100">
-          Transformez votre approche du management et guidez votre équipe vers
-          plus d&apos;autonomie et d&apos;efficacité.
-        </p>
+      <CtaSection
+        variant="primary"
+        title="Prêt à découvrir la méthode 2apex ?"
+        description="Transformez votre approche du management et guidez votre équipe vers plus d'autonomie et d'efficacité."
+      >
         <div className="flex flex-col justify-center gap-4 sm:flex-row">
-          <button className="text-primary font-montserrat inline-flex items-center gap-2 rounded-lg bg-white px-8 py-4 font-medium transition-colors hover:bg-gray-100">
-            <BookOpen size={20} />
+          <CtaButton as="button" icon={<BookOpen size={20} />}>
             Commander le livre
-          </button>
-          <Link
+          </CtaButton>
+          <CtaButton
             href="/contact?sujet=livre"
-            className="font-montserrat hover:text-primary inline-flex items-center gap-2 rounded-lg border-2 border-white px-8 py-4 font-medium text-white transition-colors hover:bg-white"
+            variant="outline"
+            icon={<ArrowRight size={20} />}
           >
             Échanger avec l&apos;auteur
-            <ArrowRight size={20} />
-          </Link>
+          </CtaButton>
         </div>
-      </Section>
+      </CtaSection>
 
       <Footer />
     </div>

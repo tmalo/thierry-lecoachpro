@@ -5,6 +5,7 @@ import { ArrowRight, Ear, Layers, Target } from "lucide-react";
 import Link from "next/link";
 import Section from "@/components/section";
 import { getTestimonialsWithCache } from "@/lib/testimonials";
+import { CtaSection, CtaButton } from "@/components/cta-section";
 
 export default async function HomePage() {
   const tem = await getTestimonialsWithCache();
@@ -236,23 +237,16 @@ export default async function HomePage() {
       </Section>
 
       {/* CTA Section */}
-      <Section style="primary" centered>
-        <h2 className="font-montserrat mb-6 text-3xl font-bold md:text-4xl">
-          Prêt à être écouté comme on écoute un poète ?
-        </h2>
-        <p className="mx-auto mb-8 max-w-2xl text-xl text-blue-100">
-          Commençons par une conversation. Sans engagement, juste l&apos;espace
-          d&apos;explorer ensemble ce qui pourrait émerger de cette écoute
-          authentique.
-        </p>
-        <Link
-          href="/contact"
-          className="text-primary font-montserrat inline-flex items-center gap-2 rounded-lg bg-white px-8 py-4 font-medium transition-colors hover:bg-gray-100"
-        >
+      <CtaSection
+        title="Prêt à être écouté comme on écoute un poète ?"
+        description="Commençons par une conversation. Sans engagement, juste l'espace
+          d'explorer ensemble ce qui pourrait émerger de cette écoute
+          authentique."
+      >
+        <CtaButton href="/contact" icon={<ArrowRight size={20} />}>
           Commençons cette écoute
-          <ArrowRight size={20} />
-        </Link>
-      </Section>
+        </CtaButton>
+      </CtaSection>
 
       <Footer />
     </div>

@@ -15,22 +15,22 @@ function parseTestimonialContent(content: string): Testimonial["content"] {
     const title = lines[0].toLowerCase();
     const text = lines.slice(1).join("\n").trim();
 
-    if (title.includes("avant le coaching")) {
+    if (title.includes("avant")) {
       sections.avant = text;
-    } else if (
-      title.includes("difficultés au quotidien") ||
-      title.includes("difficultes au quotidien")
-    ) {
+    }
+
+    if (title.includes("difficultés") || title.includes("difficultes")) {
       sections.difficultes = text;
-    } else if (
-      title.includes("ce que le coaching m'a apporté") ||
+    }
+
+    if (
+      title.includes("apport") ||
       title.includes("ce que le coaching m'a apporte")
     ) {
       sections.apport = text;
-    } else if (
-      title.includes("résultats concrets") ||
-      title.includes("resultats concrets")
-    ) {
+    }
+
+    if (title.includes("résultats") || title.includes("resultats")) {
       sections.resultats = text;
     }
   });
