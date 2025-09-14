@@ -207,7 +207,6 @@ export default function LivrePage() {
 
       {/* CTA Section */}
       <CtaSection
-        variant="primary"
         title="Prêt à découvrir la méthode 2apex ?"
         description="Transformez votre approche du management et guidez votre équipe vers plus d'autonomie et d'efficacité."
       >

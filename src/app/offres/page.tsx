@@ -125,7 +125,6 @@ export default function OffresPage() {
 
       {/* CTA Section */}
       <CtaSection
-        variant="section"
         title="Prêt à sortir de l'urgence permanente ?"
         description="Commençons par identifier ensemble l'accompagnement qui vous permettra de retrouver votre souffle et votre clarté de leader."
       >

@@ -3,7 +3,6 @@ import Link from "next/link";
 import Section from "./section";
 
 type CtaSectionProps = {
-  variant?: "section" | "primary";
   title: string;
   description: string;
   children?: React.ReactNode;
@@ -18,33 +17,9 @@ type CtaButtonProps = {
   onClick?: () => void;
 };
 
-export function CtaSection({
-  variant = "section",
-  title,
-  description,
-  children,
-}: CtaSectionProps) {
-  const Container =
-    variant === "primary"
-      ? ({ children }: { children: React.ReactNode }) => (
-          <Section style="primary" centered>
-            {children}
-          </Section>
-        )
-      : ({ children }: { children: React.ReactNode }) => (
-          <section
-            className="bg-primary py-20 text-white"
-            role="region"
-            aria-labelledby="cta-title"
-          >
-            <div className="container-max section-padding text-center">
-              {children}
-            </div>
-          </section>
-        );
-
+export function CtaSection({ title, description, children }: CtaSectionProps) {
   return (
-    <Container>
+    <Section style="primary" centered>
       <h2 className="font-montserrat mb-6 text-3xl font-bold md:text-4xl">
         {title}
       </h2>
@@ -55,7 +30,7 @@ export function CtaSection({
       )}
 
       {children}
-    </Container>
+    </Section>
   );
 }
 

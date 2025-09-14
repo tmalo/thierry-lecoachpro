@@ -185,7 +185,6 @@ export default async function Page({ params }: TestimonialPageProps) {
 
       {/* CTA Section */}
       <CtaSection
-        variant="section"
         title="Inspiré par cette transformation ?"
         description={`Comme ${testimonial.person}, vous pouvez retrouver votre souffle et transformer votre leadership. Commençons par une conversation.`}
       >
