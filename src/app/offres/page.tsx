@@ -1,24 +1,32 @@
-import Navigation from "@/components/navigation"
-import Footer from "@/components/footer"
-import OffreCard from "@/components/offre-card"
-import StructuredData from "@/components/structured-data"
-import { Clock, Calendar, ArrowRight } from "lucide-react"
-import Link from "next/link"
-import { offres } from "@/lib/offres"
-import type { Metadata } from "next"
+import Navigation from "@/components/navigation";
+import Footer from "@/components/footer";
+import OffreCard from "@/components/offre-card";
+import StructuredData from "@/components/structured-data";
+import { Clock, Calendar, ArrowRight } from "lucide-react";
+import { offres } from "@/lib/offres";
+import type { Metadata } from "next";
+import { CtaSection, CtaButton } from "@/components/cta-section";
+import Section from "@/components/section";
 
 export const metadata: Metadata = {
   title: "Mes offres de coaching | Coaching Professionnel",
   description:
     "Trois chemins pour sortir de l'urgence permanente et retrouver un leadership qui vous ressemble. Coaching individuel, coaching d'équipe et ateliers thématiques.",
-  keywords: ["coaching", "leadership", "management", "équipe", "formation", "développement professionnel"],
+  keywords: [
+    "coaching",
+    "leadership",
+    "management",
+    "équipe",
+    "formation",
+    "développement professionnel",
+  ],
   openGraph: {
     title: "Mes offres de coaching",
     description:
       "Coaching individuel, coaching d'équipe et ateliers thématiques pour retrouver un leadership authentique.",
     type: "website",
   },
-}
+};
 export default function OffresPage() {
   return (
     <div className="min-h-screen">
@@ -26,108 +34,99 @@ export default function OffresPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-white to-gray-50 py-20">
-        <div className="container-max section-padding">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="font-montserrat text-4xl md:text-5xl font-bold text-primary mb-6">Mes offres de coaching</h1>
-            <p className="text-xl text-gray-600 leading-relaxed">
-              Trois chemins pour sortir de l&apos;urgence permanente et retrouver un leadership qui vous ressemble. Chaque
-              accompagnement est pensé pour vous redonner du souffle et de la clarté.
-            </p>
-          </div>
+      <Section style="gradient">
+        <div className="mx-auto max-w-4xl text-center">
+          <h1 className="font-montserrat text-primary mb-6 text-4xl font-bold md:text-5xl">
+            Mes offres de coaching
+          </h1>
+          <p className="text-xl leading-relaxed text-gray-600">
+            Trois chemins pour sortir de l&apos;urgence permanente et retrouver
+            un leadership qui vous ressemble. Chaque accompagnement est pensé
+            pour vous redonner du souffle et de la clarté.
+          </p>
         </div>
-      </section>
+      </Section>
 
       {/* Offres Section */}
-      <section className="py-20">
-        <div className="container-max section-padding">
-          <div className="space-y-20">
-            {offres.map((offre) => (
-              <OffreCard key={offre.sku} offre={offre} />
-            ))}
-          </div>
+      <Section>
+        <div className="space-y-20">
+          {offres.map((offre) => (
+            <OffreCard key={offre.sku} offre={offre} />
+          ))}
         </div>
-      </section>
+      </Section>
 
       {/* Focus Coaching Individuel */}
-      <section className="py-20 bg-gray-50">
-        <div className="container-max section-padding">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="font-montserrat text-3xl font-bold text-primary mb-8 text-center">
+      <Section style="gray">
+          <div className="mx-auto max-w-4xl">
+            <h2 className="font-montserrat text-primary mb-8 text-center text-3xl font-bold">
               Le coaching individuel en détail
             </h2>
 
-            <div className="bg-white p-8 rounded-lg border border-gray-200 mb-8">
-              <div className="grid md:grid-cols-2 gap-8">
+            <div className="mb-8 rounded-lg border border-gray-200 bg-white p-8">
+              <div className="grid gap-8 md:grid-cols-2">
                 <div>
-                  <h3 className="font-montserrat text-xl font-semibold mb-4 flex items-center gap-2">
+                  <h3 className="font-montserrat mb-4 flex items-center gap-2 text-xl font-semibold">
                     <Clock className="text-primary" size={20} />
                     Séances de 90 minutes
                   </h3>
-                  <p className="text-gray-600 leading-relaxed mb-4">
-                    Un temps suffisant pour aller au-delà des urgences du quotidien et explorer en profondeur vos enjeux
-                    de leadership.
+                  <p className="mb-4 leading-relaxed text-gray-600">
+                    Un temps suffisant pour aller au-delà des urgences du
+                    quotidien et explorer en profondeur vos enjeux de
+                    leadership.
                   </p>
                 </div>
 
                 <div>
-                  <h3 className="font-montserrat text-xl font-semibold mb-4 flex items-center gap-2">
+                  <h3 className="font-montserrat mb-4 flex items-center gap-2 text-xl font-semibold">
                     <Calendar className="text-primary" size={20} />
                     Accompagnement 3-6 mois
                   </h3>
-                  <p className="text-gray-600 leading-relaxed mb-4">
-                    Le temps nécessaire pour ancrer de nouveaux réflexes et voir les transformations s&apos;installer
-                    durablement.
+                  <p className="mb-4 leading-relaxed text-gray-600">
+                    Le temps nécessaire pour ancrer de nouveaux réflexes et voir
+                    les transformations s&apos;installer durablement.
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="bg-primary/5 p-8 rounded-lg border border-primary/10">
-              <h3 className="font-montserrat text-xl font-semibold mb-4 text-primary">Premier entretien gratuit</h3>
-              <p className="text-gray-700 leading-relaxed">
-                Nous commençons toujours par un entretien de 30 minutes, sans engagement, pour faire connaissance et
-                explorer ensemble si mon approche résonne avec vos besoins. C&apos;est l&apos;occasion de poser toutes vos
-                questions et de sentir si nous pouvons créer cet espace de confiance nécessaire à votre transformation.
+            <div className="bg-primary/5 border-primary/10 rounded-lg border p-8">
+              <h3 className="font-montserrat text-primary mb-4 text-xl font-semibold">
+                Premier entretien gratuit
+              </h3>
+              <p className="leading-relaxed text-gray-700">
+                Nous commençons toujours par un entretien de 30 minutes, sans
+                engagement, pour faire connaissance et explorer ensemble si mon
+                approche résonne avec vos besoins. C&apos;est l&apos;occasion de
+                poser toutes vos questions et de sentir si nous pouvons créer
+                cet espace de confiance nécessaire à votre transformation.
               </p>
             </div>
           </div>
-        </div>
-      </section>
+      </Section>
 
       {/* Quote Section */}
-      <section className="py-20 bg-white">
-        <div className="container-max section-padding">
-          <div className="max-w-4xl mx-auto text-center">
-            <blockquote className="text-2xl md:text-3xl text-primary font-light leading-relaxed italic">
-              &ldquo;Chaque accompagnement est une invitation à sortir de la réaction pour retrouver votre pouvoir d&apos;agir en
+      <Section style="white">
+          <div className="mx-auto max-w-4xl text-center">
+            <blockquote className="text-primary text-2xl leading-relaxed font-light italic md:text-3xl">
+              &ldquo;Chaque accompagnement est une invitation à sortir de la
+              réaction pour retrouver votre pouvoir d&apos;agir en
               conscience.&rdquo;
             </blockquote>
           </div>
-        </div>
-      </section>
+      </Section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-primary text-white">
-        <div className="container-max section-padding text-center">
-          <h2 className="font-montserrat text-3xl md:text-4xl font-bold mb-6">
-            Prêt à sortir de l&apos;urgence permanente ?
-          </h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Commençons par identifier ensemble l&apos;accompagnement qui vous permettra de retrouver votre souffle et votre
-            clarté de leader.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 bg-white text-primary px-8 py-4 rounded-lg font-montserrat font-medium hover:bg-gray-100 transition-colors"
-          >
-            Planifier notre premier échange
-            <ArrowRight size={20} />
-          </Link>
-        </div>
-      </section>
+      <CtaSection
+        title="Prêt à sortir de l'urgence permanente ?"
+        description="Commençons par identifier ensemble l'accompagnement qui vous permettra de retrouver votre souffle et votre clarté de leader."
+      >
+        <CtaButton href="/contact" icon={<ArrowRight size={20} />}>
+          Planifier notre premier échange
+        </CtaButton>
+      </CtaSection>
 
       <Footer />
     </div>
-  )
+  );
 }

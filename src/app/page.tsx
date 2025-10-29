@@ -1,239 +1,163 @@
-import Navigation from '@/components/navigation'
-import Footer from '@/components/footer'
-import { ArrowRight, Ear, Layers, Target } from 'lucide-react'
-import Link from 'next/link'
+import Navigation from "@/components/navigation";
+import Footer from "@/components/footer";
+import {
+  ArrowRight,
+  CheckCircle,
+  Lightbulb,
+  Target,
+  Users,
+} from "lucide-react";
+import Link from "next/link";
+import Section from "@/components/section";
+import { CtaSection, CtaButton } from "@/components/cta-section";
+import { Button } from "@/components/ui/button";
+import { TargetAudience } from "@/components/target-audience";
+import { TestimonialSection } from "@/components/testimonial-section";
 
-export default function HomePage() {
+export default async function HomePage() {
   return (
     <div className="min-h-screen">
       <Navigation />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-white to-gray-50 py-20 md:py-32">
-        <div className="container-max section-padding">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="font-montserrat text-4xl md:text-6xl font-bold text-primary mb-8 animate-fade-in">
-              L&apos;équipe inspire,
-              <br />
-              <span className="text-gray-700">le leader respire</span>
-            </h1>
+      <Section style="gradient" className="md:py-32">
+        <div className="mx-auto max-w-4xl text-center">
+          <h1 className="font-montserrat text-primary animate-fade-in mb-8 text-4xl font-bold md:text-6xl">
+            &Ecirc;tre entendu, &ecirc;tre clair, <br />
+            <span className="text-gray-700">&ecirc;tre suivi.</span>
+          </h1>
 
-            <div className="max-w-3xl mx-auto mb-12">
-              <p className="text-xl md:text-2xl text-gray-700 leading-relaxed mb-6">
-                <strong>
-                  Rien n&apos;est plus motivant dans l&apos;adversité qu&apos;une équipe
-                  engagée, créative et performante.
-                </strong>
-              </p>
-              <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
-                J&apos;aide les managers à construire et à maintenir ce type
-                d&apos;équipe, grâce à un coaching sur mesure, qui redonne du souffle
-                au leadership et du sens à l&apos;action collective.
-              </p>
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/offres"
-                className="inline-flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-lg font-montserrat font-medium hover:bg-primary/90 transition-colors"
-              >
-                Découvrir mes offres
-                <ArrowRight size={20} />
-              </Link>
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 border-2 border-primary text-primary px-8 py-4 rounded-lg font-montserrat font-medium hover:bg-primary hover:text-white transition-colors"
-              >
-                Échanger ensemble
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Mon approche unique */}
-      <section className="py-20 bg-white">
-        <div className="container-max section-padding">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-primary mb-6">
-              Une approche qui vous écoute vraiment
-            </h2>
-            <p className="text-lg text-gray-600 leading-relaxed">
-              Je vous accompagne avec une écoute sensible, un cheminement
-              sur-mesure et des actions alignées avec vos convictions profondes.
+          <div className="mx-auto mb-12 max-w-3xl">
+            <p className="mb-6 text-xl leading-relaxed text-gray-700 md:text-2xl">
+              <strong>
+                J&apos;aide les experts de la Tech à transformer leur expertise
+                en impact visible, pour être compris, suivis,
+                <br /> et reconnus à leur juste valeur.
+              </strong>
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Ear className="text-primary" size={32} />
-              </div>
-              <h3 className="font-montserrat text-xl font-semibold mb-4">
-                Écoute poétique
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Je vous écoute comme on écoute un poète, attentif à ce qui se
-                dit sans se dire, aux métaphores de votre vécu.
-              </p>
-            </div>
-
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Layers className="text-primary" size={32} />
-              </div>
-              <h3 className="font-montserrat text-xl font-semibold mb-4">
-                Approche composite
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                J&apos;orchestre plusieurs instruments théoriques pour composer un
-                cheminement interrogatif unique, adapté à vous.
-              </p>
-            </div>
-
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Target className="text-primary" size={32} />
-              </div>
-              <h3 className="font-montserrat text-xl font-semibold mb-4">
-                Action mesurée
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Des invitations à l&apos;action stratégiques et fluides, qui vous
-                rapprochent de vos objectifs sans bouleverser votre contexte.
-              </p>
-            </div>
+          <div className="flex flex-col justify-center gap-4 sm:flex-row">
+            <Link
+              href="/offres"
+              className="bg-primary font-montserrat hover:bg-primary/90 inline-flex items-center gap-2 rounded-lg px-8 py-4 font-medium text-white transition-colors"
+            >
+              Découvrir mes offres
+              <ArrowRight size={20} />
+            </Link>
+            <Link
+              href="/contact"
+              className="border-primary text-primary font-montserrat hover:bg-primary inline-flex items-center gap-2 rounded-lg border-2 px-8 py-4 font-medium transition-colors hover:text-white"
+            >
+              Échanger ensemble
+            </Link>
           </div>
         </div>
-      </section>
+      </Section>
 
       {/* Target Audience Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container-max section-padding">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-primary mb-12 text-center">
-              Vous êtes au bon endroit
-            </h2>
-            <div className="space-y-6 mb-12">
-              <div className="flex items-start gap-4 p-6 bg-white rounded-lg border-l-4 border-primary/20">
-                <ul className="space-y-1 text-gray-900 dark:text-gray-400 benefits">
-                  <li>
-                    Si vous vous sentez &ldquo;entre le marteau et l&apos;enclume&rdquo;, pris·e
-                    entre la pression de votre direction et la démotivation de
-                    vos collaborateurs.
-                  </li>
-                  <li>
-                    Si vous avez l&apos;intuition qu&apos;un autre leadership est possible
-                    — mais vous ne savez pas par où commencer.
-                  </li>
-                  <li>
-                    Si votre équipe s&apos;épuise dans les détails ou s&apos;égare dans de
-                    fausses urgences, pendant que vous portez seul·e
-                    l&apos;essentiel.
-                  </li>
-                  <li>
-                    Si vous êtes fatigué·e de devoir montrer une façade assurée
-                    alors que tout en vous cherche de l&apos;air.
-                  </li>
-                </ul>
+      <TargetAudience />
+
+      {/* Ce qui devient possible */}
+      <Section style="white">
+        <div className="mx-auto max-w-4xl">
+          <h2 className="font-montserrat text-primary mb-12 text-center text-3xl font-bold md:text-4xl">
+            Ce qui devient possible
+          </h2>
+          <p className="text-foreground mb-12 text-center text-lg">
+            Imaginez :
+          </p>
+
+          <div className="mb-12 grid gap-8 md:grid-cols-2">
+            <div className="flex items-start space-x-4 rounded-lg bg-gray-50 p-8">
+              <Target className="text-primary mt-1 h-6 w-6 flex-shrink-0" />
+              <div>
+                <h3 className="mb-2 text-lg font-semibold">
+                  Votre légitimité est reconnue
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Vous exprimez vos forces et vos compétences avec assurance,
+                  sans avoir besoin de vous imposer. La visibilité vient
+                  naturellement.
+                </p>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Vous repartez avec */}
-      <section className="py-20 bg-white">
-        <div className="container-max section-padding">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-primary mb-12 text-center">
-              Vous repartez avec
-            </h2>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-gray-50 p-8 rounded-lg">
-                <h3 className="font-montserrat text-xl font-semibold mb-4 text-primary">
-                  Clarté retrouvée
+            <div className="flex items-start space-x-4 rounded-lg bg-gray-50 p-8">
+              <CheckCircle className="text-primary mt-1 h-6 w-6 flex-shrink-0" />
+              <div>
+                <h3 className="mb-2 text-lg font-semibold">
+                  Vos idées sont claires et suivies
                 </h3>
-                <p className="text-gray-700 leading-relaxed">
-                  Un espace de réflexion à l&apos;abri des pressions, où vous pouvez
-                  avancer au rythme qui vous convient vraiment. De la clarté,
-                  même en pleine turbulence, pour choisir des actions en accord
-                  avec vos convictions.
+                <p className="text-muted-foreground leading-relaxed">
+                  Vous trouvez les mots justes pour parler aussi bien aux
+                  experts qu&apos;aux décideurs, et vos messages font enfin
+                  écho.
                 </p>
               </div>
+            </div>
 
-              <div className="bg-gray-50 p-8 rounded-lg">
-                <h3 className="font-montserrat text-xl font-semibold mb-4 text-primary">
-                  Créativité libérée
+            <div className="flex items-start space-x-4 rounded-lg bg-gray-50 p-8">
+              <Lightbulb className="text-primary mt-1 h-6 w-6 flex-shrink-0" />
+              <div>
+                <h3 className="mb-2 text-lg font-semibold">
+                  Vous décidez avec sérénité
                 </h3>
-                <p className="text-gray-700 leading-relaxed">
-                  Des idées neuves, nées de cette créativité que seule la
-                  sérénité peut offrir, pour continuer à écrire le poème de
-                  votre vie professionnelle avec authenticité.
+                <p className="text-muted-foreground leading-relaxed">
+                  Vous savez distinguer ce qui compte vraiment, identifier les
+                  risques acceptables et communiquer vos choix avec clarté. Le
+                  stress laisse place à la confiance.
                 </p>
               </div>
+            </div>
 
-              <div className="bg-gray-50 p-8 rounded-lg">
-                <h3 className="font-montserrat text-xl font-semibold mb-4 text-primary">
-                  Actions alignées
+            <div className="flex items-start space-x-4 rounded-lg bg-gray-50 p-8">
+              <Users className="text-primary mt-1 h-6 w-6 flex-shrink-0" />
+              <div>
+                <h3 className="mb-2 text-lg font-semibold">
+                  Votre équipe avance ensemble
                 </h3>
-                <p className="text-gray-700 leading-relaxed">
-                  Des invitations à l&apos;action stratégiques et fluides, qui
-                  demandent peu d&apos;effort mais vous rapprochent résolument de là
-                  où vous voulez aller.
-                </p>
-              </div>
-
-              <div className="bg-gray-50 p-8 rounded-lg">
-                <h3 className="font-montserrat text-xl font-semibold mb-4 text-primary">
-                  Leadership authentique
-                </h3>
-                <p className="text-gray-700 leading-relaxed">
-                  La capacité de guider votre équipe sans vous épuiser ni
-                  compromettre vos valeurs, en devenant acteur des changements
-                  plutôt que simple spectateur.
+                <p className="text-muted-foreground leading-relaxed">
+                  Chacun connaît son rôle, prend ses responsabilités et
+                  contribue avec motivation. Vous trouvez le juste équilibre
+                  entre performance et coopération.
                 </p>
               </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* Quote Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container-max section-padding">
-          <div className="max-w-4xl mx-auto text-center">
-            <blockquote className="text-2xl md:text-3xl text-primary font-light leading-relaxed italic">
-              &ldquo;Pour que vos prochaines décisions ne soient plus prisonnières de
-              l&apos;urgence, mais guidées par ce qui compte vraiment pour vous.&rdquo;
-            </blockquote>
+          <p className="mb-8 text-center text-lg text-balance">
+            C&apos;est ce chemin de transformation que je vous propose
+            d&apos;explorer ensemble.
+          </p>
+
+          <div className="text-center">
+            <Button asChild size="xl">
+              <Link href="/contact">
+                Parlons-en
+                <ArrowRight size={20} />
+              </Link>
+            </Button>
           </div>
         </div>
-      </section>
+      </Section>
+
+      {/* Témoignages Section */}
+      <TestimonialSection />
 
       {/* CTA Section */}
-      <section className="py-20 bg-primary text-white">
-        <div className="container-max section-padding text-center">
-          <h2 className="font-montserrat text-3xl md:text-4xl font-bold mb-6">
-            Prêt à être écouté comme on écoute un poète ?
-          </h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Commençons par une conversation. Sans engagement, juste l&apos;espace
-            d&apos;explorer ensemble ce qui pourrait émerger de cette écoute
-            authentique.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 bg-white text-primary px-8 py-4 rounded-lg font-montserrat font-medium hover:bg-gray-100 transition-colors"
-          >
-            Commençons cette écoute
-            <ArrowRight size={20} />
-          </Link>
-        </div>
-      </section>
+      <CtaSection
+        title="Prêt à avancer ?"
+        description="Commençons par une conversation. Sans engagement, juste l'espace
+          d'explorer ensemble ce qui pourrait émerger de cette écoute
+          authentique."
+      >
+        <CtaButton href="/contact" icon={<ArrowRight size={20} />}>
+          Commençons cette écoute
+        </CtaButton>
+      </CtaSection>
 
       <Footer />
     </div>
-  )
+  );
 }
