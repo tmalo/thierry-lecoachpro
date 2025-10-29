@@ -15,7 +15,6 @@ import { TargetAudience } from "@/components/target-audience";
 import { TestimonialSection } from "@/components/testimonial-section";
 
 export default async function HomePage() {
-
   return (
     <div className="min-h-screen">
       <Navigation />
@@ -30,7 +29,7 @@ export default async function HomePage() {
 
           <div className="mx-auto mb-12 max-w-3xl">
             <p className="mb-6 text-xl leading-relaxed text-gray-700 md:text-2xl">
-              <strong>                
+              <strong>
                 J&apos;aide les experts de la Tech à transformer leur expertise
                 en impact visible, pour être compris, suivis,
                 <br /> et reconnus à leur juste valeur.
@@ -92,7 +91,8 @@ export default async function HomePage() {
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Vous trouvez les mots justes pour parler aussi bien aux
-                  experts qu&apos;aux décideurs, et vos messages font enfin écho.
+                  experts qu&apos;aux décideurs, et vos messages font enfin
+                  écho.
                 </p>
               </div>
             </div>
@@ -132,8 +132,11 @@ export default async function HomePage() {
           </p>
 
           <div className="text-center">
-            <Button asChild size="lg">
-              <Link href="/contact">Parlons-en</Link>
+            <Button asChild size="xl">
+              <Link href="/contact">
+                Parlons-en
+                <ArrowRight size={20} />
+              </Link>
             </Button>
           </div>
         </div>

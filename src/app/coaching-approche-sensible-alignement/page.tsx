@@ -1,9 +1,12 @@
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
-import { ArrowRight, Hammer, Handshake, Sticker } from "lucide-react";
+import { ArrowRight, Calendar, Hammer, Handshake, Sticker } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import Section from "@/components/section";
 import { CtaSection, CtaButton } from "@/components/cta-section";
+import { Button } from "@/components/ui/button";
+import { config } from "@/lib/config";
 
 export default function AProposPage() {
   return (
@@ -38,17 +41,18 @@ export default function AProposPage() {
                 et les preuves.
               </h2>
               <p className="mb-6 text-lg leading-relaxed text-gray-700">
-                Mais quand il s&apos;agit de gérer des humains, d&apos;influencer sans
-                imposer ou de se faire comprendre de non-spécialistes, les
-                algorithmes habituels ne suffisent plus.
+                Mais quand il s&apos;agit de gérer des humains,
+                d&apos;influencer sans imposer ou de se faire comprendre de
+                non-spécialistes, les algorithmes habituels ne suffisent plus.
               </p>
               <p className="mb-6 text-lg leading-relaxed text-gray-700">
                 <strong>C&apos;est là que j&apos;interviens.</strong>
               </p>
               <p className="text-lg leading-relaxed text-gray-700">
-                J&apos;aide les experts, managers et équipes techniques à retrouver
-                de la clarté, du recul et de l&apos;impact dans un environnement qui
-                bouge vite — sans perdre leur logique, ni leur authenticité.
+                J&apos;aide les experts, managers et équipes techniques à
+                retrouver de la clarté, du recul et de l&apos;impact dans un
+                environnement qui bouge vite — sans perdre leur logique, ni leur
+                authenticité.
               </p>
             </div>
 
@@ -121,6 +125,19 @@ export default function AProposPage() {
               </p>
             </div>
           </div>
+
+          <div className="mt-8 mb-4 text-center">
+            <Button asChild size="lg">
+              <Link
+                href={config.calComUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Calendar size={16} />
+                Prenons rendez-vous
+              </Link>
+            </Button>
+          </div>
         </div>
       </Section>
 
@@ -144,14 +161,15 @@ export default function AProposPage() {
             </p>
 
             <p className="text-lg leading-relaxed text-gray-700">
-              On décortique ce qui se joue, on teste d&apos;autres options, et on
-              mesure ce qui change.
+              On décortique ce qui se joue, on teste d&apos;autres options, et
+              on mesure ce qui change.
             </p>
 
             <div className="bg-primary/5 border-primary/10 mt-8 rounded-lg border p-6">
               <p className="text-lg leading-relaxed text-gray-700">
-                <strong>L&apos;objectif :</strong> faire évoluer les comportements
-                aussi naturellement qu&apos;on améliore un système en production.
+                <strong>L&apos;objectif :</strong> faire évoluer les
+                comportements aussi naturellement qu&apos;on améliore un système
+                en production.
               </p>
             </div>
           </div>
@@ -196,14 +214,14 @@ export default function AProposPage() {
 
           <div className="space-y-6">
             <p className="text-lg leading-relaxed text-gray-700">
-              20 ans dans le numérique m&apos;ont appris que la performance technique
-              ne suffit pas à créer la reconnaissance.
+              20 ans dans le numérique m&apos;ont appris que la performance
+              technique ne suffit pas à créer la reconnaissance.
             </p>
 
             <p className="text-lg leading-relaxed text-gray-700">
-              Aujourd&apos;hui, j&apos;aide mes clients à transformer leur expertise en
-              impact visible, à faire passer leurs messages, et à fédérer leurs
-              équipes autour d&apos;une vision claire.
+              Aujourd&apos;hui, j&apos;aide mes clients à transformer leur
+              expertise en impact visible, à faire passer leurs messages, et à
+              fédérer leurs équipes autour d&apos;une vision claire.
             </p>
           </div>
         </div>
