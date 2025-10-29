@@ -17,21 +17,21 @@ export const offres: Offre[] = [
     sku: "CSI-25-01",
     icon: User,
     title: "Coaching individuel",
-    subtitle: "Retrouver votre souffle de leader",
+    subtitle: "Transformer votre expertise en impact visible",
     description:
-      "Un espace sur mesure pour sortir de la réaction permanente, gagner en clarté, et retrouver votre capacité à décider selon vos convictions. Ensemble, nous créons les conditions pour que vous repreniez la main sur votre leadership, même dans la turbulence.",
-    audience: "Managers",
+      "Un accompagnement sur mesure pour les experts techniques qui veulent être compris, suivis et reconnus à leur juste valeur. Ensemble, nous travaillons sur votre communication, votre positionnement et votre capacité à influencer, pour que votre expertise technique se traduise en impact concret.",
+    audience: "Technical Experts & Managers",
     douleurs: [
-      "Vous croulez sous la pression des livrables et les réunions sans fin",
-      "Vous ressentez une fatigue décisionnelle constante",
-      "Vous agissez souvent en réaction, sans temps pour prendre du recul",
-      "Vous portez seul·e la charge mentale de votre équipe",
+      "Vos idées techniques ne sont pas comprises par les non-spécialistes",
+      "Vous avez du mal à faire passer votre vision auprès de votre équipe ou de la direction",
+      "Vous vous sentez bloqué dans votre évolution de carrière sans management hiérarchique",
+      "Vous manquez de reconnaissance malgré votre expertise technique",
     ],
     benefices: [
-      "Un espace de réflexion à l'abri des pressions",
-      "De la clarté même en pleine turbulence",
-      "Des actions alignées avec vos convictions",
-      "Des idées neuves nées de la sérénité retrouvée",
+      "Adapter votre discours pour être compris par tous, techniques ou non",
+      "Présenter votre vision de manière claire et mobilisatrice",
+      "Trouver votre place en CoTech ou CoDir avec légitimité",
+      "Progresser dans votre carrière en valorisant votre expertise",
     ],
     modalites: [
       "Séances individuelles de 90 minutes",
@@ -44,21 +44,21 @@ export const offres: Offre[] = [
     sku: "CST-25-01",
     icon: Users,
     title: "Coaching d'équipe",
-    subtitle: "Transformer la dynamique collective",
+    subtitle: "Allier entraide et haut niveau de résultats",
     description:
-      "Quand les tensions minent la performance et que la démotivation s'installe, il est temps de recréer une dynamique d'engagement. Nous travaillons ensemble pour que votre équipe retrouve sa créativité et sa capacité d'action collective.",
-    audience: "Teams",
+      "Quand votre équipe technique peine à trouver l'équilibre entre collaboration et performance, ou quand les décisions se bloquent faute d'informations complètes, il est temps de créer une nouvelle dynamique. Nous travaillons ensemble pour instaurer une culture où l'entraide et l'excellence technique se renforcent mutuellement.",
+    audience: "Technical Teams",
     douleurs: [
-      "Turnover élevé et démotivation visible",
-      "Passivité de l'équipe face aux défis",
-      "Tensions relationnelles qui parasitent le travail",
-      "Une équipe perdue qui a du mal à gérer ses priorités",
+      "L'équipe est paralysée face aux décisions dans l'incertitude",
+      "La collaboration est faible et chacun travaille en silo",
+      "Les résultats techniques sont bons mais l'ambiance se dégrade",
+      "L'équipe manque d'autonomie et attend toujours vos directives",
     ],
     benefices: [
-      "Une équipe engagée et créative",
-      "Une performance collective retrouvée",
-      "Des relations apaisées et constructives",
-      "Une capacité d'adaptation aux changements",
+      "Des méthodes concrètes pour décider malgré l'incertitude",
+      "Une culture de collaboration et de responsabilité partagée",
+      "Un équilibre entre performance technique et entraide",
+      "Une équipe autonome, motivée et performante",
     ],
     modalites: [
       "Accompagnement sur 3 à 6 mois",
@@ -71,21 +71,21 @@ export const offres: Offre[] = [
     sku: "TSX-25-01",
     icon: Lightbulb,
     title: "Ateliers thématiques",
-    subtitle: "Des outils pour respirer autrement",
+    subtitle: "Des outils pour transformer votre expertise en influence",
     description:
-      "Des moments d'apprentissage collectif pour développer des compétences clés : sortir de l'urgence permanente, communiquer avec impact, ou libérer la créativité de l'équipe. Chaque atelier offre des outils concrets pour transformer votre quotidien.",
-    audience: "Professionals",
+      "Des moments d'apprentissage collectif pour développer les compétences clés des experts techniques : communiquer avec impact auprès des non-spécialistes, structurer et présenter une vision technique mobilisatrice, ou décider efficacement dans l'incertitude. Chaque atelier offre des outils concrets et immédiatement applicables.",
+    audience: "Technical Professionals",
     douleurs: [
-      "Manque d'outils pour gérer la pression",
-      "Communication inefficace en situation de stress",
-      "Créativité bridée par l'urgence constante",
-      "Besoin de techniques pour prendre du recul",
+      "Difficulté à vulgariser des concepts techniques complexes",
+      "Manque de méthodes pour présenter une vision technique convaincante",
+      "Paralysie décisionnelle face au manque d'informations",
+      "Besoin d'outils pour gagner en influence sans autorité hiérarchique",
     ],
     benefices: [
-      "Des outils pratiques immédiatement applicables",
-      "Une meilleure gestion de la pression",
-      "Une communication plus fluide et impactante",
-      "Des techniques pour libérer la créativité",
+      "Techniques de vulgarisation pour être compris par tous",
+      "Méthodes pour structurer et présenter une vision mobilisatrice",
+      "Outils de décision dans l'incertitude",
+      "Stratégies d'influence pour les experts techniques",
     ],
     modalites: [
       "Formats de 2h à 1 journée",
@@ -94,7 +94,7 @@ export const offres: Offre[] = [
       "Support pédagogique personnalisé",
     ],
   },
-];
+]
 
 // Fonction pour récupérer une offre à partir de son SKU
 export function getOffreBySku(sku: string): Offre | undefined {

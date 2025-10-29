@@ -12,7 +12,7 @@ export default function Footer() {
               Thierry | Coach Professionnel
             </h3>
             <p className="leading-relaxed text-blue-100">
-              {"L'équipe inspire, le leader respire."}
+              Transformez votre expertise technique en impact visible
             </p>
           </div>
 
