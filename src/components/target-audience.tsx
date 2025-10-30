@@ -8,7 +8,7 @@ import { config } from "@/lib/config";
 const topics = [
   {
     title: "Vos explications techniques perdent vos interlocuteurs ?",
-    content: `Vous avez l&apos;impression d&apos;être clair, mais on
+    content: `Vous avez l'impression d'être clair, mais on
 vous regarde sans comprendre… ou vos idées passent à côté.`,
   },
   {
