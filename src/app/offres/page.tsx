@@ -58,62 +58,61 @@ export default function OffresPage() {
 
       {/* Focus Coaching Individuel */}
       <Section style="gray">
-          <div className="mx-auto max-w-4xl">
-            <h2 className="font-montserrat text-primary mb-8 text-center text-3xl font-bold">
-              Le coaching individuel en détail
-            </h2>
+        <div className="mx-auto max-w-4xl">
+          <h2 className="font-montserrat text-primary mb-8 text-center text-3xl font-bold">
+            Le coaching individuel en détail
+          </h2>
 
-            <div className="mb-8 rounded-lg border border-gray-200 bg-white p-8">
-              <div className="grid gap-8 md:grid-cols-2">
-                <div>
-                  <h3 className="font-montserrat mb-4 flex items-center gap-2 text-xl font-semibold">
-                    <Clock className="text-primary" size={20} />
-                    Séances de 90 minutes
-                  </h3>
-                  <p className="mb-4 leading-relaxed text-gray-600">
-                    Un temps suffisant pour aller au-delà des urgences du
-                    quotidien et explorer en profondeur vos enjeux de
-                    leadership.
-                  </p>
-                </div>
+          <div className="mb-8 rounded-lg border border-gray-200 bg-white p-8">
+            <div className="grid gap-8 md:grid-cols-2">
+              <div>
+                <h3 className="font-montserrat mb-4 flex items-center gap-2 text-xl font-semibold">
+                  <Clock className="text-primary" size={20} />
+                  Séances de 90 minutes
+                </h3>
+                <p className="mb-4 leading-relaxed text-gray-600">
+                  Un temps suffisant pour aller au-delà des urgences du
+                  quotidien et explorer en profondeur vos enjeux de leadership.
+                </p>
+              </div>
 
-                <div>
-                  <h3 className="font-montserrat mb-4 flex items-center gap-2 text-xl font-semibold">
-                    <Calendar className="text-primary" size={20} />
-                    Accompagnement 3-6 mois
-                  </h3>
-                  <p className="mb-4 leading-relaxed text-gray-600">
-                    Le temps nécessaire pour ancrer de nouveaux réflexes et voir
-                    les transformations s&apos;installer durablement.
-                  </p>
-                </div>
+              <div>
+                <h3 className="font-montserrat mb-4 flex items-center gap-2 text-xl font-semibold">
+                  <Calendar className="text-primary" size={20} />
+                  Accompagnement 3-6 mois
+                </h3>
+                <p className="mb-4 leading-relaxed text-gray-600">
+                  Le temps nécessaire pour ancrer de nouveaux réflexes et voir
+                  les transformations s&apos;installer durablement.
+                </p>
               </div>
             </div>
-
-            <div className="bg-primary/5 border-primary/10 rounded-lg border p-8">
-              <h3 className="font-montserrat text-primary mb-4 text-xl font-semibold">
-                Premier entretien gratuit
-              </h3>
-              <p className="leading-relaxed text-gray-700">
-                Nous commençons toujours par un entretien de 30 minutes, sans
-                engagement, pour faire connaissance et explorer ensemble si mon
-                approche résonne avec vos besoins. C&apos;est l&apos;occasion de
-                poser toutes vos questions et de sentir si nous pouvons créer
-                cet espace de confiance nécessaire à votre transformation.
-              </p>
-            </div>
           </div>
+
+          <div className="bg-primary/5 border-primary/10 rounded-lg border p-8">
+            <h3 className="font-montserrat text-primary mb-4 text-xl font-semibold">
+              Premier entretien gratuit
+            </h3>
+            <p className="leading-relaxed text-gray-700">
+              Nous commençons toujours par un entretien de 30 minutes, sans
+              engagement, pour faire connaissance et explorer ensemble si mon
+              approche résonne avec vos besoins. C&apos;est l&apos;occasion de
+              poser toutes vos questions et de sentir si nous pouvons créer cet
+              espace de confiance nécessaire à votre transformation.
+            </p>
+          </div>
+        </div>
       </Section>
 
       {/* Quote Section */}
       <Section style="white">
-          <div className="mx-auto max-w-4xl text-center">
-            <blockquote className="text-primary text-2xl leading-relaxed font-light italic md:text-3xl">
-              &ldquo;Chaque accompagnement est une invitation à sortir de la
-              réaction pour retrouver votre pouvoir d&apos;agir en
-              conscience.&rdquo;
-            </blockquote>
-          </div>
+        <div className="mx-auto max-w-4xl text-center">
+          <blockquote className="text-primary text-2xl leading-relaxed font-light italic md:text-3xl">
+            &ldquo;Chaque accompagnement est une invitation à sortir de la
+            réaction pour retrouver votre pouvoir d&apos;agir en
+            conscience.&rdquo;
+          </blockquote>
+        </div>
       </Section>
 
       {/* CTA Section */}
