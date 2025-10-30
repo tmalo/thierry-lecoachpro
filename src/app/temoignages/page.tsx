@@ -93,7 +93,7 @@ export default async function TemoignagesPage() {
       </Section>
 
       {/* Stats Section - Seulement si il y a des témoignages */}
-{/*       {testimonials.length > 0 && (
+      {/*       {testimonials.length > 0 && (
         <Section style="gray">
           <div className="mx-auto max-w-4xl">
             <h2 className="font-montserrat text-primary mb-12 text-center text-3xl font-bold">

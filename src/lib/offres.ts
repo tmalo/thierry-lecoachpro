@@ -94,7 +94,7 @@ export const offres: Offre[] = [
       "Support pédagogique personnalisé",
     ],
   },
-]
+];
 
 // Fonction pour récupérer une offre à partir de son SKU
 export function getOffreBySku(sku: string): Offre | undefined {

@@ -1,6 +1,10 @@
 import { MapPin, Calendar } from "lucide-react";
 import { navItems } from "@/lib/navigation";
 import { config } from "@/lib/config";
+import { Button } from "./ui/button";
+import Link from "next/link";
+import Substack from "./icons/substack";
+import LinkedIn from "./icons/linked-in";
 
 export default function Footer() {
   return (
@@ -14,6 +18,26 @@ export default function Footer() {
             <p className="leading-relaxed text-blue-100">
               Transformez votre expertise technique en impact visible
             </p>
+            <div className="flex-items flex">
+              <Button size="icon" asChild>
+                <Link
+                  href="https://www.linkedin.com/in/tmalo/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <LinkedIn color="text-white" />
+                </Link>
+              </Button>
+              <Button size="icon" asChild>
+                <Link
+                  href="https://thierrymalo.substack.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Substack />
+                </Link>
+              </Button>
+            </div>
           </div>
 
           <div>

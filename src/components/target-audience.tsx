@@ -14,7 +14,7 @@ vous regarde sans comprendre… ou vos idées passent à côté.`,
   {
     title: "Vos compétences solides restent parfois invisibles ?",
     content: `Vous avez le sentiment de manquer de légitimité face à ceux 
-    qui s&apos;expriment plus facilement, même s&apos;ils sont 
+    qui s'expriment plus facilement, même s'ils sont 
     moins experts.`,
   },
   {
