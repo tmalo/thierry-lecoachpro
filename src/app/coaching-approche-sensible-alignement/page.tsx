@@ -7,6 +7,8 @@ import Section from "@/components/section";
 import { CtaSection, CtaButton } from "@/components/cta-section";
 import { Button } from "@/components/ui/button";
 import { config } from "@/lib/config";
+import { SectionDefail } from "./_components/section-detail";
+
 
 export default function AProposPage() {
   return (
@@ -58,7 +60,7 @@ export default function AProposPage() {
 
             {/* Image */}
             <div className="relative">
-              <div className="from-primary/10 to-primary/5 flex h-96 items-center justify-center rounded-2xl bg-gradient-to-br p-8">
+              <div className="from-primary/10 to-primary/5 flex h-96 items-center justify-center rounded-2xl bg-gradient-to-br p-4">
                 <Image
                   src="/technical-team-collaboration.jpg"
                   alt="Équipe technique en collaboration"
@@ -143,11 +145,11 @@ export default function AProposPage() {
 
       {/* Section détaillée - Approche concrète */}
       <Section style="white">
-        <div className="mx-auto max-w-4xl">
-          <h2 className="font-montserrat text-primary mb-8 text-3xl font-bold">
-            Une approche concrète et testée sur le terrain
-          </h2>
-
+        <SectionDefail
+          title="Une approche concrète et testée sur le terrain"
+          img="/approche_concrete.jpg"
+          alt="Une approche concrete"
+        >
           <div className="space-y-6">
             <p className="text-lg leading-relaxed text-gray-700">
               <strong>
@@ -173,16 +175,16 @@ export default function AProposPage() {
               </p>
             </div>
           </div>
-        </div>
+        </SectionDefail>
       </Section>
 
       {/* Section détaillée - Cadre de co-construction */}
       <Section style="gray">
-        <div className="mx-auto max-w-4xl">
-          <h2 className="font-montserrat text-primary mb-8 text-3xl font-bold">
-            Un cadre de co-construction
-          </h2>
-
+        <SectionDefail
+          title="Un cadre de co-construction"
+          img="/co_construction.jpg"
+          alt="Un cadre de co-construction"
+        >
           <div className="space-y-6">
             <p className="text-lg leading-relaxed text-gray-700">
               Je ne vous dis pas quoi penser — je crée un espace où vous pouvez
@@ -202,16 +204,16 @@ export default function AProposPage() {
               </p>
             </div>
           </div>
-        </div>
+        </SectionDefail>
       </Section>
 
       {/* Section détaillée - Double culture */}
       <Section>
-        <div className="mx-auto max-w-4xl">
-          <h2 className="font-montserrat text-primary mb-8 text-3xl font-bold">
-            Une double culture : Tech & Humain
-          </h2>
-
+        <SectionDefail
+          title="Une double culture : Tech & Humain"
+          img="/competence.jpg"
+          alt="Une double culture : Tech & Humain"
+        >
           <div className="space-y-6">
             <p className="text-lg leading-relaxed text-gray-700">
               20 ans dans le numérique m&apos;ont appris que la performance
@@ -224,7 +226,7 @@ export default function AProposPage() {
               fédérer leurs équipes autour d&apos;une vision claire.
             </p>
           </div>
-        </div>
+        </SectionDefail>
       </Section>
 
       {/* Le résumé */}

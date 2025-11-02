@@ -6,7 +6,7 @@ import { config } from "./config";
 const organizationData = {
   "@type": "Organization",
   name: "Coaching Professionnel",
-  description: "L'équipe inspire, le leader respire",
+  description: "Être entendu, être clair, être suivi.",
   url: config.siteUrl,
   contactPoint: {
     "@type": "ContactPoint",

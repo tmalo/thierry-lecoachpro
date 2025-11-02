@@ -24,7 +24,7 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Coaching Professionnel | L'équipe inspire, le leader respire",
+  title: "Coaching Professionnel | Être entendu, être clair, être suivi.",
   description:
     "Coaching sur mesure pour managers et équipes. Redonnez du souffle au leadership et du sens à l'action collective.",
 };
