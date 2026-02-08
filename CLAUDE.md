@@ -12,6 +12,7 @@ Professional coaching website for Thierry Malo (lecoachpro.fr). French-language 
 - `npm run build` — Production build
 - `npm run lint` — ESLint (flat config, v9)
 - `npm run prettier` — Format with Prettier + Tailwind class sorting
+- `npm run knip` — Dead code detection (unused files, exports, types, deps)
 
 No test framework is configured.
 
@@ -34,15 +35,20 @@ Page-private components live in `_components/` subdirectories within their route
 
 **Offres (Services):** Defined in `src/lib/offres.ts` as typed TypeScript arrays. Each has a SKU identifier (e.g., `CSI-25-01`), pain points (`douleurs`), benefits (`benefices`), and modalities (`modalites`). `OffreDisplayed` extends `Offre` with `featured` and `collapsed` UI state.
 
-**Testimonials:** Markdown files with gray-matter frontmatter in `/testimonials/`. Loaded via `src/lib/testimonials.ts` with caching. Type definition in `src/types/testimonial.ts`.
+**Testimonials:** Markdown files with gray-matter frontmatter in `/testimonials/`. Loaded via `src/lib/testimonials.ts` with caching.
+
+**Type definitions** in `src/types/`: `offre.ts`, `program.ts`, `testimonial.ts`, `landing-page.ts`.
 
 **Structured Data:** Schema.org JSON-LD generated in `src/lib/structured-data.ts` for SEO (Organization, Services, Book, FAQs).
+
+**Other lib files:** `src/lib/offres_program.ts` (program structure data), `src/lib/livre-data.ts` (book metadata).
 
 ### Documentation & Prompts
 
 **`docs/offres/`** — Detailed offer descriptions (marketing copy, full specs, pricing):
 - `hot_sync_offre_v3_finale.md` — Hot Sync offer (flagship, v3): problem statement, 3-phase methodology, pricing (15 500€ HT), deliverables
 - `offre_techleads.md` — North Star offer (in development): 4-week program for Tech Leads/Heads of in scale-ups
+- `north-star.md` — North Star offer (refined version)
 
 **`prompts/`** — Claude prompts for content creation workflows:
 - `sous_agent_offres.md` — Sub-agent for offer creation & validation. Two modes: CREATION (4-phase: SPARK → EXPLORE → MUST-HAVE → DELIGHT) and VALIDATION (structured audit with scoring). Contains brand DNA, existing offers reference, and TypeScript output spec
@@ -50,6 +56,8 @@ Page-private components live in `_components/` subdirectories within their route
 - `prompt_reformulation_temoignage.md` — Prompt for reformulating raw testimonial interviews into 2 versions (short + medium) with catchy summaries
 - `questionnaire_creation_offre.md` — 68-question questionnaire (SPARK/EXPLORE/MUST-HAVE/DELIGHT) for structured offer ideation
 - `fondamentaux_marketing.md` — Brand architecture reference: positioning, values, tone guidelines, differentiators, intellectual signature
+- `instructions.md` — General instructions for content workflows
+- `structure_offre_publiable.md` — Structure template for publishable offer pages
 
 ### Styling
 
@@ -66,7 +74,12 @@ Page-private components live in `_components/` subdirectories within their route
 - `data-slot` attributes used for component identification
 - Polymorphic components via `asChild` prop (Radix Slot)
 - Server components by default; `"use client"` only when needed
+- Framer Motion used for animations in client components
 - Import alias: `@/*` maps to `./src/*`
+
+### Landing Page Components
+
+`src/components/landing/` contains specialized homepage sections: `hero-section`, `problem-section`, `program-section`, `transformation-section`, `pricing-section`, `pricing-card`, `deliverables-section`, `faq-section`, `coach-presentation`, `newsletter-section`, `final-cta-section`.
 
 ### Analytics & Config
 
