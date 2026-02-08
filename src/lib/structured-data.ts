@@ -47,11 +47,26 @@ const authorData = {
   ],
 };
 
+export function getOffreJsonLd(offre: Offre, slug: string) {
+  return {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          // '@type': 'Organization',
+          "@id": `${config.siteUrl}#organization`,
+          ...organizationData,
+        },
+        offreToStructuredData(offre, slug),
+      ],
+    };
+}
+
 // Convertir une offre en données structurées
-function offreToStructuredData(offre: Offre) {
+function offreToStructuredData(offre: Offre, slug?: string) {
+  const url = slug ? `${config.siteUrl}/offres${slug}` : `${config.siteUrl}/offres#${offre.sku}`
   return {
     "@type": "Service",
-    "@id": `${config.siteUrl}/offres#${offre.sku}`,
+    "@id": url,
     name: offre.title,
     description: offre.description,
     serviceType: "Professional Coaching",
@@ -260,7 +275,7 @@ export function generateOffresStructuredData() {
         },
       },
       // Services individuels
-      ...offres.map(offreToStructuredData),
+      ...offres.map(x => offreToStructuredData(x)),
     ],
   };
 }
