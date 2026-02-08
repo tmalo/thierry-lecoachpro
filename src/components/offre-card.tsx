@@ -5,7 +5,11 @@ import type { Offre } from "@/lib/offres";
 export default function OffreCard({ offre }: { offre: Offre }) {
   return (
     <div
-      className="overflow-hidden rounded-2xl border border-gray-200 bg-white"
+      className={`overflow-hidden rounded-2xl border ${
+        offre.featured
+          ? "border-corail/30 from-corail/5 to-corail/5 bg-gradient-to-br via-white"
+          : "border-gray-200 bg-white"
+      }`}
       data-sku={offre.sku}
       data-audience={offre.audience}
       id={`offre-${offre.sku}`}
@@ -13,8 +17,13 @@ export default function OffreCard({ offre }: { offre: Offre }) {
       <div className="p-8 md:p-12">
         {/* Header */}
         <div className="mb-8 flex items-center gap-4">
-          <div className="bg-primary/10 flex h-16 w-16 items-center justify-center rounded-full">
-            <offre.icon className="text-primary" size={32} />
+          <div
+            className={`${offre.featured ? "border border-gray-200 bg-gradient-to-br from-primary/5 to-white" : "bg-primary/10"} flex h-16 w-16 items-center justify-center rounded-full`}
+          >
+            <offre.icon
+              className={offre.featured ? "text-corail" : "text-primary"}
+              size={32}
+            />
           </div>
           <div>
             <h2 className="font-montserrat text-primary text-2xl font-bold md:text-3xl">
