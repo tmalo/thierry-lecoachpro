@@ -66,7 +66,7 @@ Extrais le contenu directement du fichier markdown :
 | `title` | Frontmatter `title` ou titre H1 |
 | `subtitle` | Baseline (H2 sous le titre) |
 | `description` | Synthèse de "Vous reconnaissez cette situation ?" + "Ce qui change" — 2-3 phrases max |
-| `audience` | Section "A qui s'adresse" — en anglais, concis |
+| `audience` | Section "A qui s'adresse" — une phrase en français qui nomme clairement le public cible et le bénéfice principal (ex: "Pour les managers de la Tech qui veulent arrêter de subir les contradictions et retrouver du sens dans leur rôle.") |
 | `douleurs` | Les tensions listées dans "Vous reconnaissez cette situation ?" — 4 à 6 items |
 | `benefices` | Les changements listés dans "Ce qui change" — 4 à 6 items |
 | `modalites` | Extraits de "Format" + phases du parcours — 4 à 6 items |

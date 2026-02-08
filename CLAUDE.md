@@ -80,6 +80,7 @@ Project-level skills in `.claude/skills/` for offer lifecycle management:
 
 - **`/offre-create [nom]`** — Guide la création d'une nouvelle offre à travers 4 phases (SPARK → EXPLORE → MUST-HAVE → DELIGHT). Produit un fichier `docs/offres/[nom].md` conforme à `offre-template.md` avec frontmatter de suivi (statut, checklist qualité 17 critères, score /10).
 - **`/offre-object [nom]`** — Génère un objet TypeScript `Offre` (conforme à `src/lib/offres.ts`) à partir d'un fichier offre existant dans `docs/offres/`. Requiert statut MUST-HAVE atteint (17/17 checklist). Produit un bloc `<!-- OFFRE_OBJECT {...} -->` en fin de fichier.
+- **`/code-clean`** — Supprime le code mort via Knip : fichiers inutilisés, exports morts, types non référencés, dépendances orphelines. Vérifie avec build + re-Knip.
 
 Fichiers de référence pour les skills :
 - `docs/offres/offre-template.md` — Template structurel avec frontmatter (statut, checklist, score qualité)
