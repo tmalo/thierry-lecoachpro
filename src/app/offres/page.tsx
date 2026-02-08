@@ -3,7 +3,7 @@ import Footer from "@/components/footer";
 import OffreCard from "@/components/offre-card";
 import StructuredData from "@/components/structured-data";
 import { Clock, Calendar, ArrowRight } from "lucide-react";
-import { offres } from "@/lib/offres";
+import { getOffres } from "@/lib/offres";
 import type { Metadata } from "next";
 import { CtaSection, CtaButton } from "@/components/cta-section";
 import Section from "@/components/section";
@@ -28,6 +28,7 @@ export const metadata: Metadata = {
   },
 };
 export default function OffresPage() {
+  const offres = getOffres()
   return (
     <div className="min-h-screen">
       <StructuredData type="offres" />

@@ -7,10 +7,14 @@ export interface Offre {
   subtitle: string;
   description: string;
   audience: string;
-  featured?: boolean;
   douleurs: string[];
   benefices: string[];
   modalites: string[];
+}
+
+export interface OffreDisplayed extends Offre {
+  featured: boolean;
+  collapsed: boolean;
 }
 
 export const offres: Offre[] = [
@@ -19,7 +23,6 @@ export const offres: Offre[] = [
     icon: User,
     title: "Coaching individuel",
     subtitle: "Transformer votre expertise en impact visible",
-    featured: false,
     description:
       "Un accompagnement sur mesure pour les experts techniques qui veulent être compris, suivis et reconnus à leur juste valeur. Ensemble, nous travaillons sur votre communication, votre positionnement et votre capacité à influencer, pour que votre expertise technique se traduise en impact concret.",
     audience: "Technical Experts & Managers",
@@ -47,7 +50,6 @@ export const offres: Offre[] = [
     icon: Flame,
     title: "Hot Sync",
     subtitle: "Reprendre la main sur les arbitrages et la direction collective",
-    featured: true,
     description:
       "Hot Sync est un accompagnement stratégique pour les équipes de direction tech qui font face à des arbitrages bloqués, des priorités floues et une dette organisationnelle croissante. L’objectif : passer de la réaction permanente à une direction collective claire, capable de décider, de prendre du recul et de devenir autonome dans la transformation de son organisation.",
     audience: "CTO, VP Engineering, équipes de direction tech",
@@ -128,6 +130,20 @@ export const offres: Offre[] = [
     ],
   },
 ];
+
+const featuredOffres: string[] = ["HSC-25-01"];
+
+const extendedOffres: string[] = ["CSI-25-01", "HSC-25-01"];
+
+export function getOffres(): OffreDisplayed[] {
+  return offres.map((offre) => {
+    return {
+      ...offre,
+      featured: featuredOffres.includes(offre.sku),
+      collapsed: !extendedOffres.includes(offre.sku),
+    };
+  });
+}
 
 // Fonction pour récupérer une offre à partir de son SKU
 export function getOffreBySku(sku: string): Offre | undefined {

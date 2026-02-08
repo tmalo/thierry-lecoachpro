@@ -1,8 +1,8 @@
 import { CheckCircle, ArrowRight } from "lucide-react";
 import Link from "next/link";
-import type { Offre } from "@/lib/offres";
+import type { OffreDisplayed } from "@/lib/offres";
 
-export default function OffreCard({ offre }: { offre: Offre }) {
+export default function OffreCard({ offre }: { offre: OffreDisplayed }) {
   return (
     <div
       className={`overflow-hidden rounded-2xl border ${
