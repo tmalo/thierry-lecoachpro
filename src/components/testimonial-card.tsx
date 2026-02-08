@@ -127,7 +127,7 @@ export default function TestimonialCard({
 
         {/* Contenu détaillé */}
         <div className="space-y-8">
-          {testimonial.content.avant && (
+          {testimonial.content?.avant && (
             <div>
               <h3 className="font-montserrat mb-3 text-lg font-semibold text-gray-800">
                 Avant le coaching
@@ -138,7 +138,7 @@ export default function TestimonialCard({
             </div>
           )}
 
-          {testimonial.content.difficultes && (
+          {testimonial.content?.difficultes && (
             <div>
               <h3 className="font-montserrat mb-3 text-lg font-semibold text-gray-800">
                 Les difficultés au quotidien
@@ -149,7 +149,7 @@ export default function TestimonialCard({
             </div>
           )}
 
-          {testimonial.content.apport && (
+          {testimonial.content?.apport && (
             <div>
               <h3 className="font-montserrat mb-3 text-lg font-semibold text-gray-800">
                 Ce que le coaching m&apos;a apporté
@@ -160,7 +160,7 @@ export default function TestimonialCard({
             </div>
           )}
 
-          {testimonial.content.resultats && (
+          {testimonial.content?.resultats && (
             <div>
               <h3 className="font-montserrat mb-3 text-lg font-semibold text-gray-800">
                 Les résultats concrets

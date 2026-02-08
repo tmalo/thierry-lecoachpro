@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 import TestimonialCard from "@/components/testimonial-card";
@@ -28,9 +29,49 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function TemoignagesPage() {
+async function TestimonialsList() {
   const testimonials = await getTestimonialsWithCache();
 
+  return (
+    <Section>
+      {testimonials.length === 0 ? (
+        <div className="mx-auto max-w-2xl text-center">
+          <div className="rounded-2xl bg-gray-50 p-12">
+            <MessageCircle className="mx-auto mb-4 text-gray-400" size={48} />
+            <h2 className="font-montserrat mb-4 text-2xl font-semibold text-gray-700">
+              Témoignages à venir
+            </h2>
+            <p className="mb-6 leading-relaxed text-gray-600">
+              Les premiers témoignages de nos clients seront bientôt
+              disponibles. En attendant, ontactez-moi pour découvrir comment je
+              peux vous accompagner.
+            </p>
+            <Link
+              href="/contact"
+              className="bg-primary font-montserrat hover:bg-primary/90 inline-flex items-center gap-2 rounded-lg px-6 py-3 font-medium text-white transition-colors"
+            >
+              Commencer votre transformation
+              <ArrowRight size={20} />
+            </Link>
+          </div>
+        </div>
+      ) : (
+        <div className="space-y-16">
+          {testimonials.map((testimonial, index) => (
+            <div
+              key={testimonial.id}
+              className={index % 2 === 1 ? "lg:pl-16" : "lg:pr-16"}
+            >
+              <TestimonialCard testimonial={testimonial} />
+            </div>
+          ))}
+        </div>
+      )}
+    </Section>
+  );
+}
+
+export default function TemoignagesPage() {
   return (
     <div className="min-h-screen">
       <Navigation />
@@ -56,41 +97,19 @@ export default async function TemoignagesPage() {
       </Section>
 
       {/* Témoignages */}
-      <Section>
-        {testimonials.length === 0 ? (
-          <div className="mx-auto max-w-2xl text-center">
-            <div className="rounded-2xl bg-gray-50 p-12">
-              <MessageCircle className="mx-auto mb-4 text-gray-400" size={48} />
-              <h2 className="font-montserrat mb-4 text-2xl font-semibold text-gray-700">
-                Témoignages à venir
-              </h2>
-              <p className="mb-6 leading-relaxed text-gray-600">
-                Les premiers témoignages de nos clients seront bientôt
-                disponibles. En attendant, ontactez-moi pour découvrir comment
-                je peux vous accompagner.
-              </p>
-              <Link
-                href="/contact"
-                className="bg-primary font-montserrat hover:bg-primary/90 inline-flex items-center gap-2 rounded-lg px-6 py-3 font-medium text-white transition-colors"
-              >
-                Commencer votre transformation
-                <ArrowRight size={20} />
-              </Link>
+      <Suspense
+        fallback={
+          <Section>
+            <div className="mx-auto max-w-4xl animate-pulse space-y-16">
+              {[1, 2, 3].map((i) => (
+                <div key={i} className="h-48 rounded-2xl bg-gray-200" />
+              ))}
             </div>
-          </div>
-        ) : (
-          <div className="space-y-16">
-            {testimonials.map((testimonial, index) => (
-              <div
-                key={testimonial.id}
-                className={index % 2 === 1 ? "lg:pl-16" : "lg:pr-16"}
-              >
-                <TestimonialCard testimonial={testimonial} />
-              </div>
-            ))}
-          </div>
-        )}
-      </Section>
+          </Section>
+        }
+      >
+        <TestimonialsList />
+      </Suspense>
 
       {/* Stats Section - Seulement si il y a des témoignages */}
       {/*       {testimonials.length > 0 && (

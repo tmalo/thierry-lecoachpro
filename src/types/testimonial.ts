@@ -6,7 +6,7 @@ export interface Testimonial {
   date: string;
   description: string;
   gender: "boy" | "girl";
-  content: {
+  content?: {
     avant?: string;
     difficultes?: string;
     apport?: string;

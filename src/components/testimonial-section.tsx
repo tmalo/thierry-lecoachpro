@@ -18,7 +18,12 @@ export async function TestimonialSection() {
             leadership
           </p>
 
-          <TestimonialCarousel testimonials={tem} />
+          <TestimonialCarousel
+            testimonials={tem.map(
+              // eslint-disable-next-line @typescript-eslint/no-unused-vars
+              ({ content, ...summary }) => summary,
+            )}
+          />
 
           <div className="mt-8 text-center">
             <Link

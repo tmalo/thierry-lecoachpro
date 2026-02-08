@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import { cache } from "react";
 import { Testimonial } from "@/types/testimonial";
 
 // Fonction pour parser le contenu Markdown et extraire les sections
@@ -83,15 +84,8 @@ export async function getTestimonials(): Promise<Testimonial[]> {
   );
 }
 
-// Cache pour éviter de relire les fichiers à chaque appel
-let testimonialsCache: Testimonial[] | null = null;
-
-export async function getTestimonialsWithCache(): Promise<Testimonial[]> {
-  if (testimonialsCache === null) {
-    testimonialsCache = await getTestimonials();
-  }
-  return testimonialsCache;
-}
+// Per-request deduplication via React.cache()
+export const getTestimonialsWithCache = cache(getTestimonials);
 
 // Fonction utilitaire pour récupérer un témoignage par ID
 export async function getTestimonialById(
@@ -107,9 +101,4 @@ export async function getTestimonialsByOffre(
 ): Promise<Testimonial[]> {
   const testimonials = await getTestimonialsWithCache();
   return testimonials.filter((testimonial) => testimonial.offre === offre);
-}
-
-// Fonction pour invalider le cache (utile en développement)
-export function clearTestimonialsCache(): void {
-  testimonialsCache = null;
 }
