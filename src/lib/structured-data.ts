@@ -49,21 +49,23 @@ const authorData = {
 
 export function getOffreJsonLd(offre: Offre, slug: string) {
   return {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          // '@type': 'Organization',
-          "@id": `${config.siteUrl}#organization`,
-          ...organizationData,
-        },
-        offreToStructuredData(offre, slug),
-      ],
-    };
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        // '@type': 'Organization',
+        "@id": `${config.siteUrl}#organization`,
+        ...organizationData,
+      },
+      offreToStructuredData(offre, slug),
+    ],
+  };
 }
 
 // Convertir une offre en données structurées
 function offreToStructuredData(offre: Offre, slug?: string) {
-  const url = slug ? `${config.siteUrl}/offres${slug}` : `${config.siteUrl}/offres#${offre.sku}`
+  const url = slug
+    ? `${config.siteUrl}/offres${slug}`
+    : `${config.siteUrl}/offres#${offre.sku}`;
   return {
     "@type": "Service",
     "@id": url,
@@ -275,8 +277,7 @@ export function generateOffresStructuredData() {
         },
       },
       // Services individuels
-      ...offres.map(x => offreToStructuredData(x)),
+      ...offres.map((x) => offreToStructuredData(x)),
     ],
   };
 }
-

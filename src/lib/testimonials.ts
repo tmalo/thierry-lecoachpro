@@ -94,4 +94,3 @@ export async function getTestimonialById(
   const testimonials = await getTestimonialsWithCache();
   return testimonials.find((testimonial) => testimonial.id === id);
 }
-
