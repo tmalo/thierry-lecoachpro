@@ -1,4 +1,4 @@
-import { type LucideIcon, User, Users, Lightbulb } from "lucide-react";
+import { type LucideIcon, User, Users, Lightbulb, Flame } from "lucide-react";
 
 export interface Offre {
   sku: string;
@@ -10,6 +10,11 @@ export interface Offre {
   douleurs: string[];
   benefices: string[];
   modalites: string[];
+}
+
+export interface OffreDisplayed extends Offre {
+  featured: boolean;
+  collapsed: boolean;
 }
 
 export const offres: Offre[] = [
@@ -38,6 +43,36 @@ export const offres: Offre[] = [
       "Accompagnement sur 3 à 6 mois",
       "Rythme adapté à votre agenda",
       "Suivi personnalisé entre les séances",
+    ],
+  },
+  {
+    sku: "HSC-25-01",
+    icon: Flame,
+    title: "Hot Sync",
+    subtitle: "Reprendre la main sur les arbitrages et la direction collective",
+    description:
+      "Hot Sync est un accompagnement stratégique pour les équipes de direction tech qui font face à des arbitrages bloqués, des priorités floues et une dette organisationnelle croissante. L’objectif : passer de la réaction permanente à une direction collective claire, capable de décider, de prendre du recul et de devenir autonome dans la transformation de son organisation.",
+    audience: "CTO, VP Engineering, équipes de direction tech",
+    douleurs: [
+      "Les arbitrages structurants n’arrivent jamais ou trop tard",
+      "Les priorités sont floues et génèrent une angoisse permanente du mauvais focus",
+      "La dette technique et organisationnelle s’accumule sans être arbitrée",
+      "Les dépendances entre équipes deviennent des blocages récurrents",
+      "Les managers techniques peinent à décider collectivement",
+    ],
+    benefices: [
+      "Des arbitrages clairs, assumés collectivement, avec des critères partagés",
+      "Un focus retrouvé sur ce qui compte vraiment",
+      "Une meilleure coordination entre équipes grâce à des dépendances explicites",
+      "Moins de réaction dans l’urgence, plus de capacité à construire dans la durée",
+      "Une autonomie collective pour évaluer et ajuster l’organisation sans aide externe",
+    ],
+    modalites: [
+      "Accompagnement sur 6 à 12 mois",
+      "Entretiens individuels (phase de diagnostic)",
+      "6 demi-journées de travail collectif avec l’équipe de direction tech",
+      "Rythme mensuel ou bimensuel",
+      "Synthèses écrites et outil d’auto-évaluation organisationnelle",
     ],
   },
   {
@@ -96,7 +131,21 @@ export const offres: Offre[] = [
   },
 ];
 
+const featuredOffres: string[] = ["HSC-25-01"];
+
+const extendedOffres: string[] = ["CSI-25-01", "HSC-25-01"];
+
+export function getOffres(): OffreDisplayed[] {
+  return offres.map((offre) => {
+    return {
+      ...offre,
+      featured: featuredOffres.includes(offre.sku),
+      collapsed: !extendedOffres.includes(offre.sku),
+    };
+  });
+}
+
 // Fonction pour récupérer une offre à partir de son SKU
-export function getOffreBySku(sku: string): Offre | undefined {
-  return offres.find((offre) => offre.sku === sku);
+export function getOffreBySku(sku: string): OffreDisplayed | undefined {
+  return getOffres().find((offre) => offre.sku === sku);
 }
