@@ -21,5 +21,3 @@ export const siteConfig = {
   },
 };
 
-// Type exports pour TypeScript
-export type SiteConfig = typeof siteConfig;

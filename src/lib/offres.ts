@@ -187,7 +187,7 @@ const extendedOffres: string[] = ["CSI-25-01", "HSC-25-01"];
  * - Removes non-alphanumeric characters
  * - Trims extra hyphens
  */
-export function slugify(input: string): string {
+function slugify(input: string): string {
   return input
     .normalize("NFD") // separate accents from letters
     .replace(/[\u0300-\u036f]/g, "") // remove diacritics
@@ -213,7 +213,3 @@ export function getOffreBySku(sku: string): OffreDisplayed | undefined {
   return getOffres().find((offre) => offre.sku === sku);
 }
 
-// Fonction pour récupérer une offre à partir de son slug
-export function getOffreBySlug(slug: string): OffreDisplayed | undefined {
-  return getOffres().find((offre) => offre.slug === slug);
-}

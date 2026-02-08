@@ -16,7 +16,7 @@ export interface TransformationItem {
 
 import React from "react";
 
-export function renderResult(text: string): React.ReactNode {
+function renderResult(text: string): React.ReactNode {
   const regex = /\*\*(.+?)\*\*/g;
   const parts: React.ReactNode[] = [];
 

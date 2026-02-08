@@ -1,5 +1,4 @@
 export type Tarif = "standard" | "early_bird";
-export type EventType = Tarif | "discovery_call";
 export type SessionType = "individuelle" | "collective";
 
 export interface Session {

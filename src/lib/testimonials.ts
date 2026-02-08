@@ -40,7 +40,7 @@ function parseTestimonialContent(content: string): Testimonial["content"] {
 }
 
 // Fonction pour lire tous les témoignages depuis les fichiers Markdown
-export async function getTestimonials(): Promise<Testimonial[]> {
+async function getTestimonials(): Promise<Testimonial[]> {
   const testimonialsDirectory = path.join(process.cwd(), "testimonials");
 
   // Vérifier si le répertoire existe
@@ -95,10 +95,3 @@ export async function getTestimonialById(
   return testimonials.find((testimonial) => testimonial.id === id);
 }
 
-// Fonction utilitaire pour récupérer les témoignages par offre
-export async function getTestimonialsByOffre(
-  offre: string,
-): Promise<Testimonial[]> {
-  const testimonials = await getTestimonialsWithCache();
-  return testimonials.filter((testimonial) => testimonial.offre === offre);
-}

@@ -1,7 +1,5 @@
 import { LucideIcon } from "lucide-react";
 
-export type TypeOffre = "adaptive" | "program";
-
 export interface Faq {
   question: string;
   answer: string;
