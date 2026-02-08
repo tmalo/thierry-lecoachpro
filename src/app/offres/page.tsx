@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
 };
 export default function OffresPage() {
-  const offres = getOffres()
+  const offres = getOffres();
   return (
     <div className="min-h-screen">
       <StructuredData type="offres" />
@@ -52,7 +52,7 @@ export default function OffresPage() {
       <Section>
         <div className="space-y-20">
           {offres.map((offre) => (
-            <OffreCard key={offre.sku} offre={offre} />
+            <OffreCard key={offre.sku} sku={offre.sku} />
           ))}
         </div>
       </Section>

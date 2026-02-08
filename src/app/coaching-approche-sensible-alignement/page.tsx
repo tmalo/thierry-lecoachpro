@@ -9,7 +9,6 @@ import { Button } from "@/components/ui/button";
 import { config } from "@/lib/config";
 import { SectionDefail } from "./_components/section-detail";
 
-
 export default function AProposPage() {
   return (
     <div className="min-h-screen">

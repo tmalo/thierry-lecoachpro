@@ -146,6 +146,6 @@ export function getOffres(): OffreDisplayed[] {
 }
 
 // Fonction pour récupérer une offre à partir de son SKU
-export function getOffreBySku(sku: string): Offre | undefined {
-  return offres.find((offre) => offre.sku === sku);
+export function getOffreBySku(sku: string): OffreDisplayed | undefined {
+  return getOffres().find((offre) => offre.sku === sku);
 }
