@@ -3,7 +3,7 @@
 import * as React from "react";
 import { CheckCircle, ArrowRight, ChevronDown, Ellipsis } from "lucide-react";
 import Link from "next/link";
-import { getOffreBySku} from "@/lib/offres";
+import { getOffreBySku } from "@/lib/offres";
 import { cn } from "@/lib/utils";
 import {
   Collapsible,
@@ -14,7 +14,7 @@ import { Button } from "@/components/ui/button";
 
 export default function OffreCard({ sku }: { sku: string }) {
   const offre = getOffreBySku(sku);
-  const [isOpen, setIsOpen] = React.useState(!(offre?.collapsed));
+  const [isOpen, setIsOpen] = React.useState(!offre?.collapsed);
 
   if (!offre) return;
 
