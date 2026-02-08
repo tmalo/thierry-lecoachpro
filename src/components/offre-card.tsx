@@ -1,15 +1,17 @@
 import { CheckCircle, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import type { OffreDisplayed } from "@/lib/offres";
+import { cn } from "@/lib/utils";
 
 export default function OffreCard({ offre }: { offre: OffreDisplayed }) {
   return (
     <div
-      className={`overflow-hidden rounded-2xl border ${
+      className={cn(
+        "overflow-hidden rounded-2xl border",
         offre.featured
           ? "border-corail/30 from-corail/5 to-corail/5 bg-gradient-to-br via-white"
-          : "border-gray-200 bg-white"
-      }`}
+          : "border-gray-200 bg-white",
+      )}
       data-sku={offre.sku}
       data-audience={offre.audience}
       id={`offre-${offre.sku}`}
@@ -18,7 +20,12 @@ export default function OffreCard({ offre }: { offre: OffreDisplayed }) {
         {/* Header */}
         <div className="mb-8 flex items-center gap-4">
           <div
-            className={`${offre.featured ? "border border-gray-200 bg-gradient-to-br from-primary/5 to-white" : "bg-primary/10"} flex h-16 w-16 items-center justify-center rounded-full`}
+            className={cn(
+              "flex h-16 w-16 items-center justify-center rounded-full",
+              offre.featured
+                ? "border border-gray-200 bg-gradient-to-br from-primary/5 to-white"
+                : "bg-primary/10",
+            )}
           >
             <offre.icon
               className={offre.featured ? "text-corail" : "text-primary"}
