@@ -1,21 +1,5 @@
-import { type LucideIcon, User, Users, Lightbulb, Flame } from "lucide-react";
-
-export interface Offre {
-  sku: string;
-  icon: LucideIcon;
-  title: string;
-  subtitle: string;
-  description: string;
-  audience: string;
-  douleurs: string[];
-  benefices: string[];
-  modalites: string[];
-}
-
-export interface OffreDisplayed extends Offre {
-  featured: boolean;
-  collapsed: boolean;
-}
+import { Offre, OffreDisplayed } from "@/types/offre";
+import { User, Users, Lightbulb, Flame, Compass } from "lucide-react";
 
 export const offres: Offre[] = [
   {
@@ -76,6 +60,66 @@ export const offres: Offre[] = [
     ],
   },
   {
+    sku: "NST-26-01",
+    icon: Compass,
+    title: "Programme North Star",
+    subtitle:
+      "4 semaines pour sortir du chaos et redevenir un manager qui a de l'impact",
+    description:
+      "Un programme intensif pour les Tech Leads et Heads of en scale-up coincés entre les attentes de la direction et les besoins de l'équipe. En 4 semaines, vous construisez une raison d'être claire, une vision structurée et un dispositif de pilotage adapté — pour redevenir un porteur de sens, pas juste un gestionnaire de contradictions.",
+    audience:
+      "Pour les managers de la Tech qui veulent arrêter de subir les contradictions et retrouver du sens dans leur rôle.",
+    douleurs: [
+      "Des demandes contradictoires : livrer vite tout en gérant les urgences quotidiennes",
+      "Une vision floue : difficile d'aligner tout le monde quand la stratégie change tous les mois",
+      "Une énergie dispersée : les réunions s'enchaînent sans savoir où vous allez",
+      "Une communication sous tension : dur de convaincre quand vous-même n'êtes pas convaincu",
+    ],
+    benefices: [
+      "Accueillir les contradictions sans vous épuiser — savoir recadrer sans froisser",
+      "Retrouver de la fierté dans votre rôle — la direction écoute, l'équipe comprend le cap",
+      "Gagner du temps et de l'énergie — les décisions s'alignent, les échanges deviennent fluides",
+      "Installer une dynamique durable — votre vision devient un point d'appui commun",
+    ],
+    modalites: [
+      "Programme de 4 semaines en petit groupe (6 participants max)",
+      "6 sessions : 4 collectives (1h30) + 2 individuelles (1h)",
+      "Outils et frameworks entre les séances, suivi asynchrone",
+      "1 session urgence de 30 min incluse",
+      "Garantie Clarté : arrêt sans frais après 2 semaines si pas de progression",
+    ],
+    // FAQ
+    faq: [
+      {
+        question: "Combien de temps ça prend par semaine ?",
+        answer:
+          "1h30 à 2h00 par semaine : 1h30 de session collective ou 1h de session individuelle, plus 30 min maximum de travail personnel entre les séances.",
+      },
+      {
+        question: "Quand ont lieu les sessions ?",
+        answer:
+          "Les sessions collectives ont lieu le mardi à 14h00 (Europe/Paris). Pour les sessions individuelles, vous pourrez choisir parmi diverses options proposées.",
+      },
+      {
+        question:
+          "Que se passe-t-il si je ne peux pas être présent à une session ?",
+        answer:
+          "Les sessions individuelles peuvent être reprogrammées facilement. Pour les sessions collectives, un replay vous sera fourni et nous trouverons un moment pour débriefer ensemble.",
+      },
+      {
+        question: "Est-ce adapté à mon contexte spécifique ?",
+        answer:
+          "Le programme est conçu pour les managers de la Tech. Si vous avez un doute, réservez un appel découverte gratuit de 20 min pour en discuter.",
+      },
+      {
+        question: "Paiement en plusieurs fois possible ?",
+        answer:
+          "Oui, le paiement en 2 fois est possible. Contactez-moi pour organiser cela.",
+      },
+    ],
+  },
+
+  {
     sku: "CST-25-01",
     icon: Users,
     title: "Coaching d'équipe",
@@ -135,10 +179,29 @@ const featuredOffres: string[] = ["HSC-25-01"];
 
 const extendedOffres: string[] = ["CSI-25-01", "HSC-25-01"];
 
+/**
+ * Transforms a string into a URL-friendly slug.
+ * - Removes accents / diacritics
+ * - Converts to lowercase
+ * - Replaces spaces and separators with hyphens
+ * - Removes non-alphanumeric characters
+ * - Trims extra hyphens
+ */
+export function slugify(input: string): string {
+  return input
+    .normalize("NFD") // separate accents from letters
+    .replace(/[\u0300-\u036f]/g, "") // remove diacritics
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, "-") // replace non-alphanumerics with hyphen
+    .replace(/^-+|-+$/g, ""); // trim leading/trailing hyphens
+}
+
 export function getOffres(): OffreDisplayed[] {
   return offres.map((offre) => {
     return {
       ...offre,
+      slug: slugify(offre.title),
       featured: featuredOffres.includes(offre.sku),
       collapsed: !extendedOffres.includes(offre.sku),
     };
@@ -148,4 +211,9 @@ export function getOffres(): OffreDisplayed[] {
 // Fonction pour récupérer une offre à partir de son SKU
 export function getOffreBySku(sku: string): OffreDisplayed | undefined {
   return getOffres().find((offre) => offre.sku === sku);
+}
+
+// Fonction pour récupérer une offre à partir de son slug
+export function getOffreBySlug(slug: string): OffreDisplayed | undefined {
+  return getOffres().find((offre) => offre.slug === slug);
 }

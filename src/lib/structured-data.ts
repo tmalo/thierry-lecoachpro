@@ -1,6 +1,7 @@
-import { offres, type Offre } from "./offres";
+import { offres } from "./offres";
 import { livreData, apprentissages } from "./livre-data";
 import { config } from "./config";
+import { Offre } from "@/types/offre";
 
 // Données de l'organisation
 const organizationData = {
