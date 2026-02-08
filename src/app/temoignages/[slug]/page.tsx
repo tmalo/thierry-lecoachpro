@@ -24,7 +24,7 @@ export async function generateStaticParams() {
   const testimonials = await getTestimonialsWithCache();
 
   return testimonials.map((testimonial) => ({
-    id: testimonial.id,
+    slug: testimonial.id,
   }));
 }
 
