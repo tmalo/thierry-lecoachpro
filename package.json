@@ -3,6 +3,7 @@
   "version": "2.1.1",
   "private": true,
   "scripts": {
+    "prebuild": "npx tsx ./src/scripts/get-offres.ts",
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",

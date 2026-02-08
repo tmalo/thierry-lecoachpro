@@ -20,6 +20,7 @@ export interface Offre {
 
 export interface OffreDisplayed extends Offre {
   slug: string;
+  hasDetailPage: boolean;
   featured: boolean;
   collapsed: boolean;
 }

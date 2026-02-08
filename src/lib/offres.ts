@@ -1,5 +1,6 @@
 import { Offre, OffreDisplayed } from "@/types/offre";
 import { User, Users, Lightbulb, Flame, Compass } from "lucide-react";
+import offresDisplayed from "./displayed-offres.json";
 
 export const offres: Offre[] = [
   {
@@ -175,41 +176,21 @@ export const offres: Offre[] = [
   },
 ];
 
-const featuredOffres: string[] = ["HSC-25-01"];
+export const featuredOffres: string[] = ["HSC-25-01"];
 
-const extendedOffres: string[] = ["CSI-25-01", "HSC-25-01"];
-
-/**
- * Transforms a string into a URL-friendly slug.
- * - Removes accents / diacritics
- * - Converts to lowercase
- * - Replaces spaces and separators with hyphens
- * - Removes non-alphanumeric characters
- * - Trims extra hyphens
- */
-function slugify(input: string): string {
-  return input
-    .normalize("NFD") // separate accents from letters
-    .replace(/[\u0300-\u036f]/g, "") // remove diacritics
-    .toLowerCase()
-    .trim()
-    .replace(/[^a-z0-9]+/g, "-") // replace non-alphanumerics with hyphen
-    .replace(/^-+|-+$/g, ""); // trim leading/trailing hyphens
-}
+export const extendedOffres: string[] = ["CSI-25-01", "HSC-25-01"];
 
 export function getOffres(): OffreDisplayed[] {
-  return offres.map((offre) => {
+  return offresDisplayed.map((offre) => {
     return {
       ...offre,
-      slug: slugify(offre.title),
-      featured: featuredOffres.includes(offre.sku),
-      collapsed: !extendedOffres.includes(offre.sku),
+      icon: offres.find((x) => offre.sku === x.sku)?.icon || User,
     };
   });
 }
 
 // Fonction pour récupérer une offre à partir de son SKU
 export function getOffreBySku(sku: string): OffreDisplayed | undefined {
-  return getOffres().find((offre) => offre.sku === sku);
+  const displayedOffres = getOffres();
+  return displayedOffres.find((offre) => offre.sku === sku);
 }
-

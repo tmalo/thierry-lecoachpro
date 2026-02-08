@@ -20,4 +20,3 @@ export const siteConfig = {
     discoveryCallUrl: "https://cal.com/thierry-lecoach/30min",
   },
 };
-
