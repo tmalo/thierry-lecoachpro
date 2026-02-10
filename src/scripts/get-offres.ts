@@ -1,4 +1,4 @@
-import { extendedOffres, featuredOffres, offres } from "@/lib/offres";
+import { extendedOffres, featuredOffres, offres } from "@/lib/offres_data";
 import { OffreDisplayed } from "@/types/offre";
 import * as fs from "fs";
 
@@ -34,7 +34,7 @@ export function getOffres() {
 
   const data = JSON.stringify(displayedOffres, null, 2);
   //console.log(data)
-  fs.writeFileSync("./src/lib/displayed-offres.json", data);
+  fs.writeFileSync("./src/generated/displayed-offres.json", data);
 }
 
 getOffres();
