@@ -1,6 +1,7 @@
 import { extendedOffres, featuredOffres, offres } from "@/lib/offres_data";
 import { OffreDisplayed } from "@/types/offre";
 import * as fs from "fs";
+import path from 'path';
 
 /**
  * Transforms a string into a URL-friendly slug.
@@ -34,7 +35,9 @@ export function getOffres() {
 
   const data = JSON.stringify(displayedOffres, null, 2);
   //console.log(data)
-  fs.writeFileSync("./src/generated/displayed-offres.json", data);
+  const outPath = "./src/generated/displayed-offres.json";
+  fs.mkdirSync(path.dirname(outPath), { recursive: true }); // ensure folder exists
+  (fs.writeFileSync(outPath, data), "utf8");
 }
 
 getOffres();
