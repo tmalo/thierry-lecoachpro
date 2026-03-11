@@ -22,4 +22,3 @@ Thierry a créé un espace de parole unique : *parler des choses qui fâchent, s
 
 Les gens ont pris conscience qu'on pouvait être mal et ont relativisé l'importance du travail dans leur vie personnelle. Sans Hot Sync, Je suis convaincu qu'il y aurait eu encore plus de tensions, et peut-être même des départs. Pour moi, Hot Sync est **essentiel pour la cohésion d'une équipe dirigeante** — mais ce serait pertinent dans n'importe quelle équipe. Un vrai lien entre les équipes qui permet d'éviter le pire.
 
-— Victor, Head Of Telecom
