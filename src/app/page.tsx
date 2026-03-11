@@ -11,6 +11,7 @@ import Link from "next/link";
 import Section from "@/components/section";
 import { CtaSection, CtaButton } from "@/components/cta-section";
 import { Button } from "@/components/ui/button";
+import { Suspense } from "react";
 import { TargetAudience } from "@/components/target-audience";
 import { TestimonialSection } from "@/components/testimonial-section";
 
@@ -143,7 +144,21 @@ export default async function HomePage() {
       </Section>
 
       {/* Témoignages Section */}
-      <TestimonialSection />
+      <Suspense
+        fallback={
+          <section className="bg-primary/10 py-20">
+            <div className="container-max section-padding">
+              <div className="mx-auto max-w-4xl animate-pulse">
+                <div className="mx-auto mb-4 h-8 w-64 rounded bg-gray-200" />
+                <div className="mx-auto mb-12 h-5 w-96 rounded bg-gray-200" />
+                <div className="h-64 rounded-2xl bg-gray-200" />
+              </div>
+            </div>
+          </section>
+        }
+      >
+        <TestimonialSection />
+      </Suspense>
 
       {/* CTA Section */}
       <CtaSection

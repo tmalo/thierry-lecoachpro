@@ -6,6 +6,7 @@ import {
 } from "@/types/testimonial";
 import { getOffreBySku } from "@/lib/offres";
 import Link from "next/link";
+import { parseInlineMarkdown } from "@/lib/markdown";
 
 interface TestimonialCardProps {
   testimonial: Testimonial;
@@ -127,49 +128,23 @@ export default function TestimonialCard({
 
         {/* Contenu détaillé */}
         <div className="space-y-8">
-          {testimonial.content.avant && (
-            <div>
-              <h3 className="font-montserrat mb-3 text-lg font-semibold text-gray-800">
-                Avant le coaching
-              </h3>
-              <p className="text-gray leading-relaxed">
-                {testimonial.content.avant}
-              </p>
-            </div>
-          )}
-
-          {testimonial.content.difficultes && (
-            <div>
-              <h3 className="font-montserrat mb-3 text-lg font-semibold text-gray-800">
-                Les difficultés au quotidien
-              </h3>
-              <p className="text-gray leading-relaxed">
-                {testimonial.content.difficultes}
-              </p>
-            </div>
-          )}
-
-          {testimonial.content.apport && (
-            <div>
-              <h3 className="font-montserrat mb-3 text-lg font-semibold text-gray-800">
-                Ce que le coaching m&apos;a apporté
-              </h3>
-              <p className="text-gray leading-relaxed">
-                {testimonial.content.apport}
-              </p>
-            </div>
-          )}
-
-          {testimonial.content.resultats && (
-            <div>
-              <h3 className="font-montserrat mb-3 text-lg font-semibold text-gray-800">
-                Les résultats concrets
-              </h3>
-              <p className="leading-relaxed text-gray-700">
-                {testimonial.content.resultats}
-              </p>
-            </div>
-          )}
+          {testimonial.content &&
+            testimonial.content.map((t, i) => (
+              <div key={`testimonial-${i}`}>
+                <h3 className="font-montserrat mb-3 text-lg font-semibold text-gray-800">
+                  {t.title}
+                </h3>
+                {t.content.split(/\n{2,}/).map((p, i) => (
+                  <p
+                    key={`testimonial-p-${i}`}
+                    className="text-gray leading-relaxed"
+                    dangerouslySetInnerHTML={{
+                      __html: parseInlineMarkdown(p.trim()),
+                    }}
+                  />
+                ))}
+              </div>
+            ))}
         </div>
       </div>
     </div>

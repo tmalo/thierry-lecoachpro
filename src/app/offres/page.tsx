@@ -3,7 +3,7 @@ import Footer from "@/components/footer";
 import OffreCard from "@/components/offre-card";
 import StructuredData from "@/components/structured-data";
 import { Clock, Calendar, ArrowRight } from "lucide-react";
-import { offres } from "@/lib/offres";
+import { getOffres } from "@/lib/offres";
 import type { Metadata } from "next";
 import { CtaSection, CtaButton } from "@/components/cta-section";
 import Section from "@/components/section";
@@ -28,6 +28,7 @@ export const metadata: Metadata = {
   },
 };
 export default function OffresPage() {
+  const offres = getOffres();
   return (
     <div className="min-h-screen">
       <StructuredData type="offres" />
@@ -37,7 +38,7 @@ export default function OffresPage() {
       <Section style="gradient">
         <div className="mx-auto max-w-4xl text-center">
           <h1 className="font-montserrat text-primary mb-6 text-4xl font-bold md:text-5xl">
-            Mes offres de coaching
+            Mes offres d&apos;accompagnement
           </h1>
           <p className="text-xl leading-relaxed text-gray-600">
             Trois chemins pour sortir de l&apos;urgence permanente et retrouver
@@ -51,7 +52,7 @@ export default function OffresPage() {
       <Section>
         <div className="space-y-20">
           {offres.map((offre) => (
-            <OffreCard key={offre.sku} offre={offre} />
+            <OffreCard key={offre.sku} sku={offre.sku} />
           ))}
         </div>
       </Section>

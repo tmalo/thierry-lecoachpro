@@ -24,7 +24,7 @@ export async function generateStaticParams() {
   const testimonials = await getTestimonialsWithCache();
 
   return testimonials.map((testimonial) => ({
-    id: testimonial.id,
+    slug: testimonial.id,
   }));
 }
 
@@ -64,12 +64,14 @@ export async function generateMetadata({
 export default async function Page({ params }: TestimonialPageProps) {
   const { slug } = await params;
 
-  const testimonial = await getTestimonialById(slug);
+  const [testimonial, allTestimonials] = await Promise.all([
+    getTestimonialById(slug),
+    getTestimonialsWithCache(),
+  ]);
   if (!testimonial) {
     notFound();
   }
   const offre = getOffreBySku(testimonial.offre);
-  const allTestimonials = await getTestimonialsWithCache();
   const currentIndex = allTestimonials.findIndex(
     (t) => t.id === testimonial.id,
   );

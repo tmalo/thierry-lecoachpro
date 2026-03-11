@@ -1,45 +1,21 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import { cache } from "react";
 import { Testimonial } from "@/types/testimonial";
+import { parseMarkdownSections } from "@/lib/markdown";
+
+export { parseInlineMarkdown, parseMarkdownSections, markdownToHtml } from "@/lib/markdown";
 
 // Fonction pour parser le contenu Markdown et extraire les sections
 function parseTestimonialContent(content: string): Testimonial["content"] {
-  const sections: Testimonial["content"] = {};
-
-  // Diviser le contenu par les titres de niveau 2
-  const parts = content.split(/^## /m).filter((part) => part.trim());
-
-  parts.forEach((part) => {
-    const lines = part.trim().split("\n");
-    const title = lines[0].toLowerCase();
-    const text = lines.slice(1).join("\n").trim();
-
-    if (title.includes("avant")) {
-      sections.avant = text;
-    }
-
-    if (title.includes("difficultés") || title.includes("difficultes")) {
-      sections.difficultes = text;
-    }
-
-    if (
-      title.includes("apport") ||
-      title.includes("ce que le coaching m'a apporte")
-    ) {
-      sections.apport = text;
-    }
-
-    if (title.includes("résultats") || title.includes("resultats")) {
-      sections.resultats = text;
-    }
-  });
+  const sections: Testimonial["content"] = parseMarkdownSections(content);
 
   return sections;
 }
 
 // Fonction pour lire tous les témoignages depuis les fichiers Markdown
-export async function getTestimonials(): Promise<Testimonial[]> {
+async function getTestimonials(): Promise<Testimonial[]> {
   const testimonialsDirectory = path.join(process.cwd(), "testimonials");
 
   // Vérifier si le répertoire existe
@@ -83,15 +59,8 @@ export async function getTestimonials(): Promise<Testimonial[]> {
   );
 }
 
-// Cache pour éviter de relire les fichiers à chaque appel
-let testimonialsCache: Testimonial[] | null = null;
-
-export async function getTestimonialsWithCache(): Promise<Testimonial[]> {
-  if (testimonialsCache === null) {
-    testimonialsCache = await getTestimonials();
-  }
-  return testimonialsCache;
-}
+// Per-request deduplication via React.cache()
+export const getTestimonialsWithCache = cache(getTestimonials);
 
 // Fonction utilitaire pour récupérer un témoignage par ID
 export async function getTestimonialById(
@@ -99,17 +68,4 @@ export async function getTestimonialById(
 ): Promise<Testimonial | undefined> {
   const testimonials = await getTestimonialsWithCache();
   return testimonials.find((testimonial) => testimonial.id === id);
-}
-
-// Fonction utilitaire pour récupérer les témoignages par offre
-export async function getTestimonialsByOffre(
-  offre: string,
-): Promise<Testimonial[]> {
-  const testimonials = await getTestimonialsWithCache();
-  return testimonials.filter((testimonial) => testimonial.offre === offre);
-}
-
-// Fonction pour invalider le cache (utile en développement)
-export function clearTestimonialsCache(): void {
-  testimonialsCache = null;
 }
