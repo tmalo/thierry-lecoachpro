@@ -5,8 +5,6 @@ import { cache } from "react";
 import { Testimonial } from "@/types/testimonial";
 import { parseMarkdownSections } from "@/lib/markdown";
 
-export { parseInlineMarkdown, parseMarkdownSections, markdownToHtml } from "@/lib/markdown";
-
 // Fonction pour parser le contenu Markdown et extraire les sections
 function parseTestimonialContent(content: string): Testimonial["content"] {
   const sections: Testimonial["content"] = parseMarkdownSections(content);

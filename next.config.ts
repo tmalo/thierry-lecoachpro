@@ -4,6 +4,14 @@ const nextConfig: NextConfig = {
   /* config options here */
   images: {
     remotePatterns: [
+      // api.dicebear.com
+      {
+        protocol: "https",
+        hostname: "api.dicebear.com",
+        port: "",
+        pathname: "/9.x//**",
+        search: "",
+      },
       {
         protocol: "https",
         hostname: "avatar.iran.liara.run",
