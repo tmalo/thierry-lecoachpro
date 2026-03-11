@@ -1,6 +1,6 @@
 ---
 sku: NST-26-01
-title: North Star
+title: Programme North Star
 date_creation: 2026-02-08
 auteur: Thierry Malo
 statut: publiable
@@ -25,7 +25,7 @@ checklist:
   cible_distincte: true
 ---
 
-# North Star
+# Programme North Star
 
 ## 4 semaines pour sortir du chaos et redevenir un manager qui compte
 
@@ -203,7 +203,7 @@ Parlons-en. Un premier échange de 30 minutes, sans engagement, pour voir si Nor
 {
   "sku": "NST-26-01",
   "icon": "Compass",
-  "title": "North Star",
+  "title": "Programme North Star",
   "subtitle": "4 semaines pour sortir du chaos et redevenir un manager qui compte",
   "description": "Un programme intensif pour les Tech Leads et Heads of en scale-up coincés entre les attentes de la direction et les besoins de l'équipe. En 4 semaines, vous construisez une raison d'être claire, une vision structurée et un dispositif de pilotage adapté — pour redevenir un porteur de sens, pas juste un gestionnaire de contradictions.",
   "audience": "Tech Leads & Heads of in scale-ups",

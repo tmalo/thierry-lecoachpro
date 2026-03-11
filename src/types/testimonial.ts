@@ -1,3 +1,8 @@
+export type MarkdownSection = {
+  level: number
+  title: string
+  content: string
+}
 export interface Testimonial {
   id: string;
   offre: string;
@@ -6,12 +11,7 @@ export interface Testimonial {
   date: string;
   description: string;
   gender: "boy" | "girl";
-  content: {
-    avant?: string;
-    difficultes?: string;
-    apport?: string;
-    resultats?: string;
-  };
+  content?: MarkdownSection[]
 }
 
 // Fonction pour générer l'URL de l'avatar

@@ -1,9 +1,15 @@
 "use client";
 
 import * as React from "react";
-import { CheckCircle, ArrowRight, ChevronDown, Ellipsis } from "lucide-react";
+import {
+  CheckCircle,
+  ArrowRight,
+  ChevronDown,
+  Ellipsis,
+  ExternalLink,
+} from "lucide-react";
 import Link from "next/link";
-import { getOffreBySku} from "@/lib/offres";
+import { getOffreBySku } from "@/lib/offres";
 import { cn } from "@/lib/utils";
 import {
   Collapsible,
@@ -14,7 +20,7 @@ import { Button } from "@/components/ui/button";
 
 export default function OffreCard({ sku }: { sku: string }) {
   const offre = getOffreBySku(sku);
-  const [isOpen, setIsOpen] = React.useState(!(offre?.collapsed));
+  const [isOpen, setIsOpen] = React.useState(!offre?.collapsed);
 
   if (!offre) return;
 
@@ -146,7 +152,17 @@ export default function OffreCard({ sku }: { sku: string }) {
           </CollapsibleContent>
 
           {/* CTA */}
-          <div className="mt-8 border-t border-gray-200 pt-6">
+          <div className="mt-8 flex gap-8 border-t border-gray-200 pt-6">
+            {offre.hasDetailPage && (
+              <Link
+                href={`/offres/${offre.slug}`}
+                className="text-primary font-montserrat inline-flex items-center gap-2 font-medium transition-all hover:gap-3"
+              >
+                Lire plus
+                <ExternalLink size={12} />
+              </Link>
+            )}
+
             <Link
               href={`/contact?offre=${offre.sku}`}
               className="text-primary font-montserrat inline-flex items-center gap-2 font-medium transition-all hover:gap-3"

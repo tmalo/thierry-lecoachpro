@@ -1,6 +1,7 @@
-import { offres, type Offre } from "./offres";
+import { offres } from "./offres_data";
 import { livreData, apprentissages } from "./livre-data";
 import { config } from "./config";
+import { Offre } from "@/types/offre";
 
 // Données de l'organisation
 const organizationData = {
@@ -46,11 +47,28 @@ const authorData = {
   ],
 };
 
+export function getOffreJsonLd(offre: Offre, slug: string) {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        // '@type': 'Organization',
+        "@id": `${config.siteUrl}#organization`,
+        ...organizationData,
+      },
+      offreToStructuredData(offre, slug),
+    ],
+  };
+}
+
 // Convertir une offre en données structurées
-function offreToStructuredData(offre: Offre) {
+function offreToStructuredData(offre: Offre, slug?: string) {
+  const url = slug
+    ? `${config.siteUrl}/offres${slug}`
+    : `${config.siteUrl}/offres#${offre.sku}`;
   return {
     "@type": "Service",
-    "@id": `${config.siteUrl}/offres#${offre.sku}`,
+    "@id": url,
     name: offre.title,
     description: offre.description,
     serviceType: "Professional Coaching",
@@ -259,56 +277,7 @@ export function generateOffresStructuredData() {
         },
       },
       // Services individuels
-      ...offres.map(offreToStructuredData),
+      ...offres.map((x) => offreToStructuredData(x)),
     ],
-  };
-}
-
-// Générer le JSON-LD pour une offre spécifique
-export function generateOffreStructuredData(offre: Offre) {
-  return {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        // '@type': 'Organization',
-        "@id": `${config.siteUrl}#organization`,
-        ...organizationData,
-      },
-      offreToStructuredData(offre),
-    ],
-  };
-}
-
-// Générer le JSON-LD pour l'organisation
-export function generateOrganizationStructuredData() {
-  return {
-    "@context": "https://schema.org",
-    // '@type': 'Organization',
-    "@id": `${config.siteUrl}#organization`,
-    ...organizationData,
-    sameAs: [
-      // Ajoutez ici les liens vers les réseaux sociaux si disponibles
-      "https://www.linkedin.com/in/tmalo",
-      // "https://twitter.com/coaching-pro"
-    ],
-    knowsAbout: [
-      "Executive Coaching",
-      "Team Coaching",
-      "Leadership Development",
-      "Management Training",
-      "Professional Development",
-    ],
-    makesOffer: offres.map((offre) => ({
-      "@type": "Offer",
-      itemOffered: {
-        "@type": "Service",
-        name: offre.title,
-        description: offre.description,
-        audience: {
-          "@type": "Audience",
-          audienceType: offre.audience,
-        },
-      },
-    })),
   };
 }

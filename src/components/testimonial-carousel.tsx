@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import TestimonialCard from "./testimonial-card";
-import { Testimonial } from "@/types/testimonial";
+import type { Testimonial } from "@/types/testimonial";
 
 interface TestimonialCarouselProps {
   testimonials: Testimonial[];
@@ -65,7 +65,7 @@ export default function TestimonialCarousel({
           className="flex transition-transform duration-500 ease-in-out"
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >
-          {testimonials.map((testimonial: Testimonial) => (
+          {testimonials.map((testimonial) => (
             <div key={testimonial.id} className="w-full flex-shrink-0">
               <TestimonialCard
                 testimonial={testimonial}

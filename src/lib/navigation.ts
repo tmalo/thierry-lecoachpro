@@ -1,8 +1,3 @@
-export interface NavItem {
-  href: string;
-  label: string;
-}
-
 export const navItems = [
   { href: "/", label: "Accueil" },
   { href: "/offres", label: "Mes offres" },
