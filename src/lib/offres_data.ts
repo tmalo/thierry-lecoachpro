@@ -30,7 +30,7 @@ export const offres: Offre[] = [
     ],
   },
   {
-    sku: "HSC-25-01",
+    sku: "HSC-26-01",
     icon: Flame,
     title: "Hot Sync",
     subtitle: "Reprendre la main sur les arbitrages et la direction collective",
@@ -175,6 +175,6 @@ export const offres: Offre[] = [
   },
 ];
 
-export const featuredOffres: string[] = ["HSC-25-01"];
+export const featuredOffres: string[] = ["HSC-26-01"];
 
-export const extendedOffres: string[] = ["CSI-25-01", "HSC-25-01"];
+export const extendedOffres: string[] = ["CSI-25-01", "HSC-26-01"];

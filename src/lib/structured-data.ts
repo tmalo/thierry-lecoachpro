@@ -1,4 +1,4 @@
-import { offres } from "./offres";
+import { offres } from "./offres_data";
 import { livreData, apprentissages } from "./livre-data";
 import { config } from "./config";
 import { Offre } from "@/types/offre";
