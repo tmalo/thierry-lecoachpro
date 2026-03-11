@@ -5,20 +5,21 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'avatar.iran.liara.run',
-        port: '',
-        pathname: '/public/**',
-        search: '',
+        protocol: "https",
+        hostname: "avatar.iran.liara.run",
+        port: "",
+        pathname: "/public/**",
+        search: "",
       },
-            {
-        protocol: 'https',
-        hostname: 'placehold.co',
-        port: '',
-        pathname: '/**',
-        search: '',
+      {
+        protocol: "https",
+        hostname: "placehold.co",
+        port: "",
+        pathname: "/**",
+        search: "",
       },
     ],
-  },};
+  },
+};
 
 export default nextConfig;

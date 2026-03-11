@@ -6,7 +6,7 @@ import {
 } from "@/types/testimonial";
 import { getOffreBySku } from "@/lib/offres";
 import Link from "next/link";
-import { parseInlineMarkdown } from "@/lib/testimonials";
+import { parseInlineMarkdown } from "@/lib/markdown";
 
 interface TestimonialCardProps {
   testimonial: Testimonial;
