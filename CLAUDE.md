@@ -35,7 +35,9 @@ Page-private components live in `_components/` subdirectories within their route
 
 **Offres (Services):** Defined in `src/lib/offres.ts` as typed TypeScript arrays. Each has a SKU identifier (e.g., `CSI-25-01`), pain points (`douleurs`), benefits (`benefices`), and modalities (`modalites`). `OffreDisplayed` extends `Offre` with `featured` and `collapsed` UI state.
 
-**Testimonials:** Markdown files with gray-matter frontmatter in `/testimonials/`. Loaded via `src/lib/testimonials.ts` with caching.
+**Testimonials:** Markdown files with gray-matter frontmatter in `/testimonials/`. Loaded via `src/lib/testimonials.ts` with caching. Format : frontmatter (offre, person, gender, job, date) → excerpt (1-2 phrases : arc avant/après + résultat ou verbatim fort, max 290 caractères) → `---` → sections H2 (Avant, Ce qui a changé, Résultats). L'excerpt doit rester court (référence : Stéphane = 213 car., Victor = 264 car., Mélanie = 289 car.).
+
+**Raw testimonial responses:** Fichiers JSON à la racine nommés `[respondentId]_[offre].json`, contenant `answers[]` avec `question`/`answer`. Servent de source pour rédiger ou mettre à jour l'excerpt et les sections d'un fichier testimonial.
 
 **Type definitions** in `src/types/`: `offre.ts`, `program.ts`, `testimonial.ts`, `landing-page.ts`.
 
