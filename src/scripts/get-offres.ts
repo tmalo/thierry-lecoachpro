@@ -1,7 +1,7 @@
 import { extendedOffres, featuredOffres, offres } from "@/lib/offres_data";
 import { OffreDisplayed } from "@/types/offre";
 import * as fs from "fs";
-import path from 'path';
+import path from "path";
 
 /**
  * Transforms a string into a URL-friendly slug.
