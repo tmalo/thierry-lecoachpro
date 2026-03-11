@@ -6,7 +6,7 @@ job: Head Of Telecom
 date: 2026-02-20
 ---
 
-De la souffrance invisible au dialogue sans filtre
+Dans une équipe dirigeante sous pression, les Hot Sync ont créé un espace rare : parler des choses qui fâchent, sans que ça fâche. Quand Thierry a bousculé un responsable pour qu'il s'engage concrètement sur les problèmes soulevés, ça a généré beaucoup d'espoir.
 
 ---
 
