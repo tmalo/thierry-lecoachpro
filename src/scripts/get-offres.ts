@@ -3,6 +3,119 @@ import { OffreDisplayed } from "@/types/offre";
 import * as fs from "fs";
 import path from "path";
 
+const jsonSchema = {
+  $schema: "http://json-schema.org/draft-07/schema#",
+  type: "array",
+  items: {
+    $ref: "#/definitions/Offre",
+  },
+  definitions: {
+    Offre: {
+      type: "object",
+      additionalProperties: false,
+      required: [
+        "sku",
+        "icon",
+        "title",
+        "subtitle",
+        "description",
+        "audience",
+        "douleurs",
+        "benefices",
+        "modalites",
+        "slug",
+        "hasDetailPage",
+        "featured",
+        "collapsed",
+      ],
+      properties: {
+        sku: {
+          type: "string",
+          pattern: "^[A-Z]{2,5}-[0-9]{2}-[0-9]{2}$",
+        },
+        icon: {
+          type: "object",
+          description: "Objet réservé pour les métadonnées d'icône",
+        },
+        title: {
+          type: "string",
+          minLength: 1,
+        },
+        subtitle: {
+          type: "string",
+          minLength: 1,
+        },
+        description: {
+          type: "string",
+          minLength: 1,
+        },
+        audience: {
+          type: "string",
+          minLength: 1,
+        },
+        douleurs: {
+          type: "array",
+          minItems: 1,
+          items: {
+            type: "string",
+            minLength: 1,
+          },
+        },
+        benefices: {
+          type: "array",
+          minItems: 1,
+          items: {
+            type: "string",
+            minLength: 1,
+          },
+        },
+        modalites: {
+          type: "array",
+          minItems: 1,
+          items: {
+            type: "string",
+            minLength: 1,
+          },
+        },
+        slug: {
+          type: "string",
+          pattern: "^[a-z0-9-]+$",
+        },
+        hasDetailPage: {
+          type: "boolean",
+        },
+        featured: {
+          type: "boolean",
+        },
+        collapsed: {
+          type: "boolean",
+        },
+        faq: {
+          type: "array",
+          items: {
+            $ref: "#/definitions/FaqItem",
+          },
+        },
+      },
+    },
+    FaqItem: {
+      type: "object",
+      additionalProperties: false,
+      required: ["question", "answer"],
+      properties: {
+        question: {
+          type: "string",
+          minLength: 1,
+        },
+        answer: {
+          type: "string",
+          minLength: 1,
+        },
+      },
+    },
+  },
+};
+
 /**
  * Transforms a string into a URL-friendly slug.
  * - Removes accents / diacritics
@@ -36,8 +149,11 @@ export function getOffres() {
   const data = JSON.stringify(displayedOffres, null, 2);
   //console.log(data)
   const outPath = "./src/generated/displayed-offres.json";
+  const outSchemaPath = "./src/generated/displayed-offres.schema.json";
   fs.mkdirSync(path.dirname(outPath), { recursive: true }); // ensure folder exists
-  (fs.writeFileSync(outPath, data), "utf8");
+  fs.writeFileSync(outPath, data, "utf8");
+
+  fs.writeFileSync(outSchemaPath, JSON.stringify(jsonSchema, null, 2), "utf8");
 }
 
 getOffres();
