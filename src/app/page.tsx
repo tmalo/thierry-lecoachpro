@@ -1,12 +1,6 @@
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
-import {
-  ArrowRight,
-  CheckCircle,
-  Lightbulb,
-  Target,
-  Users,
-} from "lucide-react";
+import { ArrowRight, Handshake, Shield, Target, Users } from "lucide-react";
 import Link from "next/link";
 import Section from "@/components/section";
 import { CtaSection, CtaButton } from "@/components/cta-section";
@@ -24,17 +18,17 @@ export default async function HomePage() {
       <Section style="gradient" className="md:py-32">
         <div className="mx-auto max-w-4xl text-center">
           <h1 className="font-montserrat text-primary animate-fade-in mb-8 text-4xl font-bold md:text-6xl">
-            &Ecirc;tre entendu, &ecirc;tre clair, <br />
-            <span className="text-gray-700">&ecirc;tre suivi.</span>
+            Votre expertise est solide.
+            <br />
+            <span className="text-gray-700">Ce qui bloque est ailleurs.</span>
           </h1>
 
           <div className="mx-auto mb-12 max-w-3xl">
             <p className="mb-6 text-xl leading-relaxed text-gray-700 md:text-2xl">
-              <strong>
-                J&apos;aide les experts de la Tech à transformer leur expertise
-                en impact visible, pour être compris, suivis,
-                <br /> et reconnus à leur juste valeur.
-              </strong>
+              J&apos;accompagne les CTOs, VP Tech et Heads Of sur ce que leur
+              expertise ne résout plus — tenir leur position, décider
+              collectivement, construire une organisation qui tient sans eux au
+              centre.
             </p>
           </div>
 
@@ -43,14 +37,14 @@ export default async function HomePage() {
               href="/offres"
               className="bg-primary font-montserrat hover:bg-primary/90 inline-flex items-center gap-2 rounded-lg px-8 py-4 font-medium text-white transition-colors"
             >
-              Découvrir mes offres
+              Découvrir les offres
               <ArrowRight size={20} />
             </Link>
             <Link
               href="/contact"
               className="border-primary text-primary font-montserrat hover:bg-primary inline-flex items-center gap-2 rounded-lg border-2 px-8 py-4 font-medium transition-colors hover:text-white"
             >
-              Échanger ensemble
+              Parlons-en
             </Link>
           </div>
         </div>
@@ -65,49 +59,45 @@ export default async function HomePage() {
           <h2 className="font-montserrat text-primary mb-12 text-center text-3xl font-bold md:text-4xl">
             Ce qui devient possible
           </h2>
-          <p className="text-foreground mb-12 text-center text-lg">
-            Imaginez :
-          </p>
-
           <div className="mb-12 grid gap-8 md:grid-cols-2">
             <div className="flex items-start space-x-4 rounded-lg bg-gray-50 p-8">
               <Target className="text-primary mt-1 h-6 w-6 flex-shrink-0" />
               <div>
                 <h3 className="mb-2 text-lg font-semibold">
-                  Votre légitimité est reconnue
+                  Les arbitrages ne traînent plus
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Vous exprimez vos forces et vos compétences avec assurance,
-                  sans avoir besoin de vous imposer. La visibilité vient
-                  naturellement.
+                  Vos décisions structurantes se prennent — avec des critères
+                  clairs, assumés collectivement. Vous sortez de la réaction
+                  permanente.
                 </p>
               </div>
             </div>
 
             <div className="flex items-start space-x-4 rounded-lg bg-gray-50 p-8">
-              <CheckCircle className="text-primary mt-1 h-6 w-6 flex-shrink-0" />
+              <Shield className="text-primary mt-1 h-6 w-6 flex-shrink-0" />
               <div>
                 <h3 className="mb-2 text-lg font-semibold">
-                  Vos idées sont claires et suivies
+                  Votre position tient
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Vous trouvez les mots justes pour parler aussi bien aux
-                  experts qu&apos;aux décideurs, et vos messages font enfin
-                  écho.
+                  Vous tenez face au CEO et aux métiers sans vous épuiser à
+                  justifier. Votre influence ne dépend plus du dernier coup
+                  d&apos;éclat.
                 </p>
               </div>
             </div>
 
             <div className="flex items-start space-x-4 rounded-lg bg-gray-50 p-8">
-              <Lightbulb className="text-primary mt-1 h-6 w-6 flex-shrink-0" />
+              <Handshake className="text-primary mt-1 h-6 w-6 flex-shrink-0" />
               <div>
                 <h3 className="mb-2 text-lg font-semibold">
-                  Vous décidez avec sérénité
+                  Vous avez un interlocuteur qui parle votre langue
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Vous savez distinguer ce qui compte vraiment, identifier les
-                  risques acceptables et communiquer vos choix avec clarté. Le
-                  stress laisse place à la confiance.
+                  Pas un consultant qui dit quoi faire. Un Sparring Partner qui
+                  pense avec vous — sans filtre politique, sur ce qui bloque
+                  vraiment.
                 </p>
               </div>
             </div>
@@ -116,20 +106,19 @@ export default async function HomePage() {
               <Users className="text-primary mt-1 h-6 w-6 flex-shrink-0" />
               <div>
                 <h3 className="mb-2 text-lg font-semibold">
-                  Votre équipe avance ensemble
+                  Votre équipe de direction décide sans tout remonter
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Chacun connaît son rôle, prend ses responsabilités et
-                  contribue avec motivation. Vous trouvez le juste équilibre
-                  entre performance et coopération.
+                  Les Head Of assument leurs arbitrages. Les blocages entre
+                  équipes disparaissent. Vous pilotez votre organisation, vous
+                  ne la subissez plus.
                 </p>
               </div>
             </div>
           </div>
 
           <p className="mb-8 text-center text-lg text-balance">
-            C&apos;est ce chemin de transformation que je vous propose
-            d&apos;explorer ensemble.
+            Si ça résonne, la prochaine étape est une conversation.
           </p>
 
           <div className="text-center">
@@ -163,12 +152,10 @@ export default async function HomePage() {
       {/* CTA Section */}
       <CtaSection
         title="Prêt à avancer ?"
-        description="Commençons par une conversation. Sans engagement, juste l'espace
-          d'explorer ensemble ce qui pourrait émerger de cette écoute
-          authentique."
+        description="Pas de pitch. Une conversation pour voir si votre situation et mon approche sont compatibles."
       >
         <CtaButton href="/contact" icon={<ArrowRight size={20} />}>
-          Commençons cette écoute
+          Parlons de votre situation
         </CtaButton>
       </CtaSection>
 
