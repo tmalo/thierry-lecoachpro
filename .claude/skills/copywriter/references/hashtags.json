@@ -1,0 +1,152 @@
+[
+  {
+    "tag": "#CTO",
+    "categorie": "role",
+    "portee": "niche",
+    "note": "Rôle cible principal — fort signal d'intention pour l'audience"
+  },
+  {
+    "tag": "#VPEngineering",
+    "categorie": "role",
+    "portee": "niche",
+    "note": "Second rôle cible principal de Hot Sync"
+  },
+  {
+    "tag": "#EngineeringManager",
+    "categorie": "role",
+    "portee": "niche",
+    "note": "Managers de proximité tech — audience secondaire et prescripteurs"
+  },
+  {
+    "tag": "#TechLead",
+    "categorie": "role",
+    "portee": "niche",
+    "note": "Profils en transition IC → leader, très touchés par les topics 2 et 5"
+  },
+  {
+    "tag": "#DirecteurTechnique",
+    "categorie": "role",
+    "portee": "niche",
+    "note": "Équivalent francophone VP Engineering, utilisé dans les grandes structures"
+  },
+  {
+    "tag": "#LeadershipTech",
+    "categorie": "leadership",
+    "portee": "niche",
+    "note": "Hashtag de référence pour les contenus leadership dans la tech"
+  },
+  {
+    "tag": "#ManagementTech",
+    "categorie": "leadership",
+    "portee": "niche",
+    "note": "Spécifique au management d'équipes techniques"
+  },
+  {
+    "tag": "#OrganisationTech",
+    "categorie": "leadership",
+    "portee": "niche",
+    "note": "Pertinent pour les posts sur les arbitrages, décision collective, Hot Sync"
+  },
+  {
+    "tag": "#DirectionCollective",
+    "categorie": "leadership",
+    "portee": "niche",
+    "note": "Résonne directement avec la promesse Hot Sync — réaction permanente → direction collective"
+  },
+  {
+    "tag": "#ÉquipeTech",
+    "categorie": "leadership",
+    "portee": "niche",
+    "note": "Pour les posts sur la rétention, productivité, culture engineering"
+  },
+  {
+    "tag": "#DetteTechnique",
+    "categorie": "topic",
+    "portee": "niche",
+    "note": "Topic 2 — hashtag francophone, utilisé par les CTOs et architects"
+  },
+  {
+    "tag": "#RétentionTalents",
+    "categorie": "topic",
+    "portee": "niche",
+    "note": "Topic 1 — guerre des talents, profils seniors, fuite vers la concurrence"
+  },
+  {
+    "tag": "#TalentTech",
+    "categorie": "topic",
+    "portee": "niche",
+    "note": "Complément à #RétentionTalents, plus large, utilisé par les RH tech"
+  },
+  {
+    "tag": "#Burnout",
+    "categorie": "topic",
+    "portee": "large",
+    "note": "Topic 8 — très engageant, large audience, à utiliser sur les posts vulnérables"
+  },
+  {
+    "tag": "#IAGénérative",
+    "categorie": "topic",
+    "portee": "large",
+    "note": "Topic 9 — très fort en portée organique en 2025-2026"
+  },
+  {
+    "tag": "#Cybersécurité",
+    "categorie": "topic",
+    "portee": "niche",
+    "note": "Topic 3 — audience RSSI, CTO, DSI — marché en tension selon les tendances"
+  },
+  {
+    "tag": "#ScaleUp",
+    "categorie": "contexte",
+    "portee": "large",
+    "note": "Contexte marché — utilisé en France, cible les boîtes en hyper-croissance"
+  },
+  {
+    "tag": "#TechFrance",
+    "categorie": "contexte",
+    "portee": "large",
+    "note": "Ancrage géographique — important pour la visibilité locale"
+  },
+  {
+    "tag": "#StartupTech",
+    "categorie": "contexte",
+    "portee": "large",
+    "note": "Contexte marché — complément à #ScaleUp pour les entreprises plus jeunes"
+  },
+  {
+    "tag": "#Leadership",
+    "categorie": "large",
+    "portee": "large",
+    "note": "Hashtag généraliste à fort volume — à mélanger avec les hashtags niche"
+  },
+  {
+    "tag": "#Management",
+    "categorie": "large",
+    "portee": "large",
+    "note": "Hashtag généraliste — portée maximale, à utiliser en renfort"
+  },
+  {
+    "tag": "#Coaching",
+    "categorie": "large",
+    "portee": "large",
+    "note": "Légitime pour les posts Les Coulisses et La Question Tabou — humanise la pratique"
+  },
+  {
+    "tag": "#TransformationOrganisationnelle",
+    "categorie": "transformation",
+    "portee": "niche",
+    "note": "Pour les posts sur le passage réaction permanente → direction collective"
+  },
+  {
+    "tag": "#AlignementStratégique",
+    "categorie": "transformation",
+    "portee": "niche",
+    "note": "Topic 7 — relation CEO/board, traduction tech en business"
+  },
+  {
+    "tag": "#IntelligenceCollective",
+    "categorie": "transformation",
+    "portee": "niche",
+    "note": "Résonne avec la posture rogérienne de Thierry — les solutions émergent du collectif"
+  }
+]
